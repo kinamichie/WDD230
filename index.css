@@ -1,0 +1,47 @@
+/* CIT 230 - Assignment Portal CSS Template */
+/* You may use #HEX or color names */
+
+/* * is a wildcard referring to all elements. */
+@import url('https://fonts.googleapis.com/css?family=Acme|Anton|Cantarell|Lusitana|Maven+Pro');
+
+* { margin: 0; box-sizing: border-box; } 
+
+body { 
+    font-size: 12px; 
+    line-height: 32px;
+    font-family: acme, centurygothic, sans-serif;
+    color: black;
+}
+
+h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+header, main, footer {
+    margin: 1.25rem auto;
+    padding: .5rem;
+    max-width: 500px;
+}
+
+header, footer, footer a {
+    text-align: center;
+    background-color: #22286B;
+    color: whitesmoke;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+footer {
+    font-size: 1rem;
+}
