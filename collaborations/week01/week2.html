@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W02 Team Activity</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <input type="number" name="user-input" id="user-input" placeholder="Enter a number"><br>
+    <input type="number" name="second-number" id="second-number" placeholder="Enter another number"><br>
+    <label>Step 1 and 2: </label><button onclick="displayInput()">Click Me!</button><br>
+    <div id="display"></div>
+    <label>Step 3: </label><button onclick="addThemUp()">+</button><br>
+    <div id="display2"></div>
+    <!--<label>Stretch 1: </label><select id="operation">
+        <option value="addition">+</option>
+        <option value="multipy">*</option>
+        <option value="subtraction">-</option>
+    </select>
+    <button id="math" onclick="handlesMath()">Do the math!</button>-->     
+    <h2>Stretch Activity</h2> 
+    <input type="number" name="stretchNumber1" id="stretchNumber1" placeholder="Enter a number"><br>
+    <input type="number" name="stretchNumber2" id="stretchNumber2" placeholder="Enter a number"><br>
+    <!--Stretch -->
+    <button id="stretchAdd" onclick="performOperation(addSome)">Addition</button>
+    <button id="stretchSub" onclick="performOperation(subSome)">Subtraction</button><br>
+    <button id="stretchMult" onclick="performOperation(multSome)">Multiplication</button><br>
+    <div id="stretchOutput"></div>
+        
+
+    <script>
+        function displayInput() {
+            // Grab the users input
+            const num = document.getElementById("user-input").value;
+
+            const sumNum = sum(Number(num));
+            
+            // Display the result to the page
+            document.getElementById("display").innerText = "The numbers added up to the first number submitted " +  sumNum;
+        
+        }
+        function sum(number) {
+            let sum = 0;
+            //count down number and add it to sum until number = 0
+            while (number > 0){
+                sum += number;
+                number--;
+            }
+            return sum;
+        }
+
+        function addThemUp(sum) {
+            const num = document.getElementById("user-input").value;
+
+            const addTwo = document.getElementById("second-number").value;
+
+            document.getElementById("display2").innerText = "The sum of the numbers is " + (Number(num) + Number(addTwo));
+        }
+
+        //Stretch 
+        function handlesMath(numId){
+            const number = document.getElementById(numId).value;
+            const numberFloat = parseFloat(number);
+            if (numberFloat !== NaN) {
+                return numberFloat;
+            } else return 0;
+        }
+        function newTotal(value){
+            const ouptputElement = document.getElementById('stretchOutput');
+            ouptputElement.innerHTML = 'Total: ' + value;
+        }
+               
+        //function add
+        function addSome(num1, num2){
+            return num1 +num2;
+        }
+        //function subtract 
+         function subSome(num1, num2){
+            return num1-num2;
+        };
+        //arrow function
+        const multSome = (num1, num2) => num1*num2;
+
+        //callback
+        function performOperation(operation) {
+            const total = operation(handlesMath('stretchNumber1'), handlesMath('stretchNumber2'));
+            newTotal(total);
+        }
+        
+       
+        </script>
+</body>
+
+</html>

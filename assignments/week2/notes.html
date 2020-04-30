@@ -1,0 +1,134 @@
+/*This web page is the notes I have taken from the reading in week 2. It comes from Chapters 2, 3, and 4 in JavaScript Novice to Ninja*/
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Notes for week 2</title>
+        <meta name="description" content="Notes for week one by Kina Michie WDD 330">
+    </head>
+    <body>
+    <header>
+        <h1>Notes For Week 2</h1>
+    </header>
+    <body>
+        <ul><h2>Chapter 2; Javascript Novice to Ninja</h2>
+            <li>Comment lines can be /*   */ for long comments and // for short ones. They should be used in your code.</li>
+            <li>One line of code is a statement</li>
+            <li>A series of statements are are collected together inside curly braces are a block</li>
+            <li>Reserved words cannot be used to name variables</li>
+            <li>Primitive Data Types</li>
+            <ul>
+                <li>String</li>
+                <li>Symbol</li>
+                <li>Number</li>
+                <li>Boolean</li>
+                <li>Undefined</li>
+                <li>Null</li>
+                <li>Any value that isn't one of the primitive data types listed is an object</li>
+            </ul>
+            <li>Variables refer to a value stored in memory</li>
+            <ul>
+                <li>"let" can be reassigned another value later in the program</li>
+                <li>"const" cannot be reassigne another value. It should be used to declare most variables</li>
+            </ul>
+            <li>Name variable using either camel or underscore</li>
+            <li>Strings</li>
+            <ul>
+                <li>When using an apostrophe, use double quote marks to enclose the string or a backslash before the apostrophe</li>
+                <li>toUpperCase()</li>
+                <li>toLowerCase()</li>
+                <li>indexOf()</li>
+                <li>charAt()</li>
+                <li>startsWith()</li>
+                <li>endsWith()</li>
+                <li>concat()</li>
+                <li>trim()</li>
+                <li>repeat()</li>
+                <li>template literals</li>
+            </ul>
+            <li>Symbols</li>
+            <ul>
+                <li>Symbol()</li>
+            </ul>
+            <li>Numbers</li>
+            <ul>
+                <li>Number.isInteger()</li>
+                <li>If number starts with 0x it is considered to be in hexadecimal base</li>
+                <li>If the number starts with 0o it is considered to be octal notation</li>
+                <li>If the number starts with 0b is is considered to be in binary notation</li>
+                <li>Exponential notation, .toExpotential() pg 58</li>
+                <li>toFixed()</li>
+                <li>toPrecision()</li>
+                <li>Arithmetic Operations</li>
+            <ul>
+                <li>The usual arithmetic operations can be carried out in JavaScript</li>
+            </ul>
+            <li>NaN = Not a number</li>
+            <li>Convert strings to numbers</li>
+            </ul>
+            <li>Undefined is the value given to variables that have not been assigned a value</li>
+            <li>Booleans</li>
+            <ul>
+                <li>! (logic not)</li>
+                <li>&& (logical AND)</li>
+                <li>|| (logical OR)</li>
+            </ul>
+            <li>Soft equality ==, hard equality ===</li>        
+        </ul>
+        <ul><h2>Arrays, Logic, and Loops</h2>
+            <li>Arrays are ordered lists of values</li>
+            <li>Create an array literal using square brackets that contain intitial values</li>
+            <li>When deleting an item from an array, it will leave an undefined value</li>
+            <li>Deconstructing an array is taking values out and presenting them as individual</li>
+            <li>Length of an array list use .length</li>
+            <li>To remove the last value of a list use .pop()</li>
+            <li>To remove the first value of a list use .shift()</li>
+            <li>To merge an array use .concat()</li>
+            <li>The join method turns the array into a string .join()</li>
+            <li>To find middle values of an array use .slice()</li>
+            <li>To remove items from an array and replace them use .splice(). This is a permanent method</li>
+            <li>Reverse order by useing .reverse()</li>
+            <li>Sort an array with .sort(). This is permanent puts it in alphabetical order</li>
+            <li>To find a particular value use .indexOf() or .includes()</li>
+            <li>Multidimensional arrays are an array of arrays</li>
+            <li>A set is a data structure that represents a collection of unique values. Cannot include any duplicate values</li>
+            <li>Create a set use new Set()</li>
+            <li>To add values to a set use .add()</li>
+            <li>To see if a value is in a set use .has()</li>
+            <li>To remove a value from a set use .delete() or to remove all values use .clear()</li>
+            <li>Sets can be converted into arrays</li>
+            <li>Maps can help keep track of inheritences so uneeded data can be deleted</li>
+            <li>Create a map using new Map()</li>
+            <li>Add entries to a map using .set()</li>
+            <li>Maps can be converted to nested arrays</li>
+            <li>Logic statements</li>
+                <ul>
+                    <li>if</li>
+                    <li>else</li>
+                    <li>Ternary operator is used as a shorthand to if, else statements</li>
+                    <li>switch</li>
+                    <li>while loops</li>
+                    <li>do while loops</li>
+                    <li>nested for loops</li>
+                    <li>looping over arrays</li>
+                    <li>looping over sets</li>
+                    <li>looping over maps</li>
+                </ul>
+        </ul>
+        <ul><h2>Functions</h2>
+            <li>Functions are a chunk of code that can be referenced by name</li>
+            <li>Define a function literal using a function declaration, an anonymous function(), or a function constructor new Function()</li>
+            <li>To invoke a function enter it's name followed by parentheses</li>
+            <li>All functions return a value</li>
+            <li>Set parameters for your functions</li>
+            <li>Default parameters should always come after non-default parameters</li>
+            <li>Arrow functions use =></li>
+            <li>Variable declarations that use the var keyword are automatically moved to the top of the current scope</li>
+            <li>callback() parameters make functions more flexible</li>
+            <li>Array iterators are forEach(), map(), reduce(), split(), filter(), reduceRight(), every(), and some()</li>
+            <li>Irators can be chained together</li>
+        </ul>
+            
+
+    </body>
