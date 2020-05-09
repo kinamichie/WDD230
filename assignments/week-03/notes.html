@@ -1,0 +1,121 @@
+<!--This web page is the notes I have taken from the reading in week 3. It comes from Chapters 5, 6, and 7 in JavaScript Novice to Ninja-->
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Notes for week 3</title>
+        <meta name="description" content="Notes for week one by Kina Michie WDD 330">
+    </head>
+    <body>
+    <header>
+        <h1>Notes For Week 3</h1>
+    </header>
+    <body>
+        <ul><h2>Objec Methods, "this"</h2>
+            <li>To access the object, a method can use the "this" keyword</li>
+            <li>"this" is not bound</li>
+            <li>Arrow functions have no "this"</li>
+        </ul>
+        <ul><h2>This in Javascript</h2>
+            <li>"this" is a keyword that changes depending on how a gunction gets called</li>
+            <li>Six different ways where "this" can take on new values:</li>
+            <ul>
+                <li>"this" in global context</li>
+                <li>"this" in object construction</li>
+                <li>"this" in an object method</li>
+                <li>"this" in a simple function</li>
+                <li>"this" in an arrow function</li>
+                <li>"this" in an event listener</li>
+            </ul>
+        </ul>
+         <ul><h2>Chapter 5; Javascript Novice to Ninja</h2>
+            <li>Objects are like a database of values</li>
+            <li>An object literal is an object that is created directly in the language by wrapping all its properties and methods in curly braces {}</li>
+            <li>It is possible to create an object using a constructor function</li>
+            <li>Object literal is the preferred way to create objects</li>
+            <li>You can access objects with the dot method "." or the bracket method []</li>
+            <li>Calling a method is the same as invoking a function</li>
+            <li>An operator can be used to see whether an object has a particular property</li>
+            <li>To find all of an objects property, you can use an in loop</li>
+            <li>New properties and methods can be added to an object at any time</li>
+            <li>Properties do not always appear in the order they were entered</li>
+            <li>The names of object properties can be changed at anytime also</li>
+            <li>Object properties can be deleted</li>
+            <li>Objects that contain other objects are called nested objects</li>
+            <li>An object literal can be passed as a parameter to a function</li>
+            <li>The keyword "this" refers to an object that is within</li>
+            <li>JSON is a string representation of the object literal notation</li>
+            <ul>
+                <ol>Property names must be double-quoted</ol>
+                <ol>Permitted values are double-quoted strings, numbers, true, false, null, arrays and objects</ol>
+                <ol>Functions are not permitted values</ol>
+            </ul>
+            <li>The parse() method takes a string of data in JSON format and returns a JavaScript object</li>
+            <li>the stringify() method does the oppostie</li>
+            <li>A Math object is built in and cannot be changed. The list of different Math objects is pages 187-195</li>
+            <li>Date objects can be used to create dates in different forms</li>
+            <li>Getter methods are able to return information</li>
+            <li>Setter methods set values</li>
+            <li>RegExp = a regular expression</li>
+            <li>Character groups can be placed together inside square brackets</li>
+            <li>In a regular expression, there are a number of characters that have a special meaning, commonly known as metacharacters:</li>
+            <ul>
+                <li>. matches any character, except line breaks</li>
+                <li>\w matches any word chrarcter, and is equivalent to [A-Za-z0-9_]</li>
+                <li>\W matches any non-word character, and is equivalent to [\^A-Za=z0-9_]</li>
+                <li>\d matches any digit character, and is equivalent to [0-9]</li>
+                <li>\D matches any non-digit character, and is equivalent to [^0-9]</li>
+                <li>\s matches any whitespace character, and is equivalent to [ \t\r\n\f]</li>
+                <li>\S matches any non-whitespace character, and is equivalent to [^ \t\r\n\f\]</li>
+            </ul>
+            <li>Modifiers can be placed after a token to deal with multiple occurrences of that token</li>
+            <ul>
+                <li>? makes the preceding token in the regular expression optional</li>
+                <li>* matches one or more occurrences of the preceding token</li>
+                <li>+ matches one or more occurrences of the preceding token</li>
+                <li>{n} matches n occurences of the preceding token</li>
+                <li>{n,} matches at least n occurrences of the pattern</li>
+                <li>{,m} matches at most m occurrences of the preceding token</li>
+                <li>{n,m} matches at least n and at most m occurnces of the preceding token</li>
+                <li>^ marks the position immediately before the first character in the string</li>
+                <li>$ marks the position immediately after the last character in the string</li>
+                <li>Any special character or modifers can be escaped using the backslash.</li>
+            </ul>
+            <li>Greedy modifers will match the longest possible string</li>
+            <li>Lazy modifers match the shortest possible string</li>
+            <li>String methods: split(), match(), g fag, search(), replace()</li>
+            </ul>
+            <ul><h2>Chapter 6</h2>
+            <li>DOM = Document Object Model. It represents an HTML document as a network of connected nodes that form a tree-like structure</li>
+            <li>DOM is not actually part of JavaScript</li> 
+            <li>DOM shortcut methods</li>  
+            <ul>
+                <li>Document.body returns the body element of a web page</li>
+                <li>Document.images returns a node list of all the images in the document</li>
+                <li>Document.links returns a node list of all the "a" elements and "area" elements that have an href attribute</li>
+                <li>Document.anchors returns a node list of all the "a" elemments and "area" elements that have a name attribute</li>
+                <li>Document.forms returns a node list of all the forms in the document</li>
+            </ul> 
+            <li>Note lists are like arrays but are not arrays</li>  
+            <li>getElementById(), getElementByTagName(), getElementByClassName(), querySelector()</li>
+            <li>childNodes property is a list of all the nodes that are children of the node concerned</li>  
+            <li>getAttribute returns the value of the attribut provided as an argument</li>
+            <li>setAttribute can change the value of an element's attributes</li>
+            <li>className can be used for an element to be set directly</li>
+            <li>classList is a a list of all the classes an element has</li>
+            <li>createElement will add some content</li>
+            <li>appendChild()</li>
+            <li>To add an element between two existing elements use insertBefore()</li>
+            <li>Every element node has a style property</li>
+        </ul>
+        <ul><h2>Chapter 7</h2>
+            <li>Event listeners notify the user</li>
+            <li>Instead of taking more notes on this chapter, I did the code <a href="events/events.html">events</a> </li>
+        </ul>
+        <ul><h2>Questions</h2>
+            <li></li>
+
+        </ul>
+    </body>
+</html>
