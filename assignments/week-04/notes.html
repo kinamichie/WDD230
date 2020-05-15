@@ -1,0 +1,132 @@
+<!--This web page is the notes I have taken from the reading in week 4. It comes from Chapters 8, 12, and 15 in JavaScript Novice to Ninja-->
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Notes for week 4</title>
+        <meta name="description" content="Notes for week four by Kina Michie WDD 330">
+    </head>
+    <body>
+    <header>
+        <h1>Notes For Week 4</h1>
+    </header>
+    <body>
+        <ul><h2>Chapter 8</h2>
+            <li>Forms can now be used to process information using JavaScript</li>
+            <li>To return all forms in an HTML document use document.forms[0];, document.getElementByTagname('form')[0];, document.forms.search;, or document.forms['search'];</li>
+            <li>Method calld 'elements' const {input,button] = form.elements</li>
+            <li>Form controls using name attribute example if attribute is named 'searchInput' use const input = form.searchInput; or form['searchInput'];</li>
+            <li>form.submit() method will submit the form automatically</li>
+            <li>form.reset() will reset the form back to their initial values</li>
+            <li>for.action can be used to set the actiona attribute of a form so it is sent to a different URL to be proccessed form.action = 'another url';</li>
+            <li>EventListeners information was done seperately in <a href="search/search.html">search file</a></li>
+            <li>Some common form controls are: input, select, textarea, and button</li>
+            <li>Input fields are the most common types of form control</li>
+            <li>The rest of the form is done in the program <a href="hero/hero.html">Hero</a></li>         
+            <li>The default bype of input field is text. type='text'</li>
+            <li>Password input is input type='password'</li>
+        </ul>
+        <ul><h2>Chapter 12</h2>
+            <li>Encapsulation is the inner workings inside an object</li>
+            <li>Polymorphism means the same process can be used for different objects</li>
+            <li>Inheritance is taking the features of one object and then adding some new features</li>
+            <li>Classes define a blueprint for an object</li>
+            <li>Prototype Property adding extra methods and properties after a class has been made</li>
+            <li>Two ways to find out the prototype are .constuctor.prototype; and Object.getPrototypeOf();</li>
+            <li>If a new property or method is added to the prototype, any instances of its class will inherit the new properties and methos automatically.</li>
+            <li>You can overwrite a prototype by giving them their own value</li>
+            <li>The prototype can be used to add any new properties and methods after the class has been declared</li>
+            <li>A constructor function is another way to create objects</li>
+            <li>The class declaration syntax works in exactly the same way as the constructor function syntax</li>
+            <li>Every object has a construor property that returns the constructor function that created it</li>
+            <li>A static keyword can be used in class declarations to create a static method</li>
+            <li>Prototypal Inheritance means that every class has a prototype that is shared by every instance of the class</li>
+            <li>The Prototype Chain shows the instances that end at the object</li>
+            <li>Enumerable Properties are the properties whose internal enumerable flag is set to true</li>
+            <li>a class can inherit from another class using the extends keyword in a class declaration</li>
+            <li>Polymorphism means that different objects can have the same methos but implement it in a different way</li>
+            <li>Primitives are without their own methods</li>
+            <li>Even custom objects have a toString() method</li>
+            <li>You can add methods to built-in objects using monkey-patches</li>
+            <ul>
+                <li>isOdd()</li>
+                <li>isEven()</li>
+                <li>first()</li>
+                <li>last()</li>
+                <li>splice()</li>
+                <li>trim()</li>
+                <li>delete()</li>
+            </ul>
+            <li>All object properties have the following attributes stored in a property descriptor:</li>
+            <ul>
+                <li>value-This is the value of the property and is undefined by default</li>
+                <li>writable-This boolean value shows whether a property can be changed or not, and is false by default</li>
+                <li>enumerable-this boolean value shows whether a property will show up when the object is displayed in and for in oop and is false by default</li>
+                <li>configurable-This boolean value shows whether you can delete a property or change any of its attributes, and is false by default</li>
+            </ul>
+            <li>Object() constructor function methods</li>
+            <ul>
+                <li>Object property descriptors can have get() and set()</li>
+                <li>Create objects from other objects</li>
+            </ul>
+            <li>Object-Based Inheritance</li>
+            <ul>
+                <li>name and realName properties</li>
+                <li>change()</li>
+                <li>init()</li>
+            </ul>
+            <li>Object prototype chain: Every time a new object is created using the Object.create() method, the new object inhereits all the properties and methods from the parent object using .isPrototypeOf() </li>
+            <li>Mixins is a way of adding properties and methods of some objects to another object without useing inheritance. Object.assign()</li>
+            <li>One use for the mixin() function is to add a large number of properties to an object all at once.</li>
+            <li>Another use is to create a copy() method that can be used to make an exact, deep copy of an object</li>
+            <li>Factory Functions is a function that can be used to return an object</li>
+            <li>If a method returns this, its methods can be chained together to form a sequence of methods that are called one after the other.</li>
+            <li>The bind() method is a method for all functions and is used to set the value of this in the function</li>
+            <li>for-of method does not require a nested function to be used</li>
+            <li>It is possible to borrow methods without having to inherit all their properties and methods</li>
+        </ul>
+        <ul><h2>Chapter 15</h2>
+            <li>Libraries will abstract functionality into easier-to-use functions and methods</li>
+            <li>JQuery is the most popular of all the JavaScript libraries used.</li>
+            <li>Underscore and Lodash are very similar libraires of functions that provide additional functionality to the language</li>
+            <li>The big advantage of using a popular library is that it will be used by lots of people and thoroughly tested</li>
+            <li>The disadvantage of using a popular library is that it increasing the amount of code that needs to be downloaded by a websitewhich can cause performance issues</li>
+            <li>a module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules</li>
+            <li>ES6 Modules</li>
+            <ul>
+                <li>All code in modules is alsays in strict mode without the need for 'use strict' and there is on way to opt out of this</li>
+                <li>A module has its own global scope, so any variables created in the tip-level of a module can only be accessed within that module</li>
+                <li>The value of this in the top level of a module is undefined, rather than the global object</li>
+                <li>You can't use HTML-style comments in modules (although this isn't very common in any JavaScript program these days</li>
+            </ul>
+            <li>Import and export code from other js files</li>
+            <li>Don't use more than one default export</li>
+            <li>MVC Framework= Model-View-Controller is a common way to designing software, and makes it easier to organize large-scale web applications</li>
+            <li>Sample of how it works <a href="MVC/list.html">here</a></li>
+            <li>MV Frameworks</li>
+            <ul>
+                <li>Aurelia is a modern framwork that uses ES6, and focuses on letting you write dynamic web applications while keeping the implementation details in the backgroung</li>
+                <li>Angular is a pwerful framwork by Google to make creating dynamic web applications easier.  This is done by extending the HTML language using custom ng-attributes</li>
+                <li>Ember is a gramwork designed to make building large web applications easier. It does this by using common conventions that avoid the need for lots of set-up code, though it can become more difficult if you don't follow these conventions</li>
+            </ul>
+            <li>Templating languages also enable you to insert basic programming logic into view</li>
+            <li>Popular templating languages are: handlebars, Pug, EJS, Mustache and Nunjucks</li>
+            <li>React and Vue.js are two of the view libraries that have emerged as the most popular</li>
+            <li>Package Managers allow developers to download modules from a central repository</li>
+            <li>npm is the Node Package Manager</li>
+            <li>Yarn has emerged recently as a popular alternative to npm</li>
+            <li>When deploying programs, they must be optimized first</li>
+            <li>Put script tag references at the bottom of the page</li>
+            <li>Code transpilers take JavaScript code and change it into JavaScript Code</li>
+            <li>Minification is the process of removing any unneccessary character from you code to reduce the file size: YUI Compressor, Google's Closure, and UglifyJS</li>
+            <li>As a general rule you should use well-commented and descriptive code in developement and minified code in production</li>
+            <li>Organize files by type</li>
+            <li>Start with the root files: index.html, main.css, and main.js</li>
+        </ul>
+        <ul><h2>Questions</h2>
+        <li>Why, when I am following the book exactly, do I still get errors in my code? Granted I am typing it all out so I get the practice, but even when I copy and paste it in it sometimes doesn't work.</li>
+        <li>Will we learn how to minimize files and work with libraries in this class?</li>
+    </ul>
+        </body>
+        </html>
