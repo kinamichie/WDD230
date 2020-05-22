@@ -1,0 +1,43 @@
+<!--this program outputs a loop in console.log to make a triangle.-->
+<!DOCTYPE html>
+<html lang="en-us">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Practice Chapter 2</title>
+ </head>
+ <body>
+<script>
+    //exercise chapter 2 #1
+    for(let result='#'; result.length <8; result +="#")
+        console.log(result);
+
+    //excercise chapter 2 #2
+    for(let number=1; number <101; number++){
+        let output='';
+    
+        if (number % 3 == 0) output += "Fizz";
+        if (number % 5 == 0) output += "Buzz";
+            console.log(output || number);
+    }  
+
+    //exercise chapter 2 #3
+    let size=8;
+    let board ='';
+    for (let y = 0; y < size; y++) {
+        for (let x = 0; x < size; x++) {
+            if ((x + y) % 2 == 0) {
+                board += " ";
+            } else {
+            board += "#";
+        }
+    }
+    board += "\n";
+}
+
+console.log(board);
+    
+ 
+</script>
+ </body>
+ </html>

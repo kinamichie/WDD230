@@ -1,0 +1,69 @@
+<!--This web page is the notes I have taken from the reading in week 5. It comes from Chapter 10 in JavaScript Novice to Ninja-->
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Notes for week 5</title>
+        <meta name="description" content="Notes for week one by Kina Michie WDD 330">
+    </head>
+    <body>
+    <header>
+        <h1>Notes For Week 5</h1>
+    </header>
+    <body>
+        <ul><h2>Chapter 10</h2>
+        <li>Errors</li>
+        <ul>
+            <li>System error- there's a problem with the system or external devices with which the program is interacting</li>
+            <li>Programmer error- the program contains incorrect sytax or faulty logic; it could even be as simple as a typo</li>
+            <li>User error- the user has entered data incorrectly, which the program is unable to handle</li>
+        </ul>
+        <li>An exception is an error that produces a return value that can then be used by the program to deal with the error</li>
+        <li>An exception will also produce a stack tace which is a sequence of functions or method calls that lead to the point where the error occurred</li>
+        <li>Warnings can occur if there's an error in the code that isn't enough to cause the program to crash. The program will still run but might not run properly</li>
+        <li>It's important to test your code and deal with errors</li>
+        <li>Strict mode produces more restrictions and warnings. Activate it by putting 'use strict' at the beginning of your js code or at the beginning of a function</li>
+        <li>Linting tools such as JS Lint, JS Hint, and ES Lint can be used to test the quality of JS code</li>
+        <li>Always look at browser support when determining a feature to use</li>
+        <li>The most basic form of debugging is to use the alert() method</li>
+        <li>Console.log can be used to show what is happening when the program is used to help find errors</li>
+        <li>Using the debugging tool in the browser is a great way to find errors</li>
+        <li>An error object can be created by the host environment when an exception occurs, or it can be created in the code const error = new Error(); const error = new Error('oops');</li>
+        <ul>
+            <li>EvalError was used to identify errors when using the global eval() function</li>
+            <li>RangeError is thrown when a number is outside an allowable range of values</li>
+            <li>ReferenceError is thrown when there's an error in the code's syntax</li>
+            <li>Syntax Error is thrown when there's an error in the code's syntax</li>
+            <li>TypeError is thrown when there's an error in the type of value used; for example, a string is used when a number is expected</li>
+            <li>URIError is thrown when there's a problem incoding or decoding the URI</li>
+            <li>InternalError is a non-standard error that is thrown when an error occurs in the JavaScript engine. A common cause of this is too much recursion</li>
+            <li>Properties that are generally safe to use</li>
+            <ul>
+                <li>The name property returns the name of the error constructor function used as a string, such as "Error" or "ReferenceError"</li>
+                <li>The message property returns a description of the error and should be provided as an argument to the Error constructor function</li>
+                <li>The stack property will return a stack trace for that error. This is a non-standard property and it's recommended that it is not safe to use in production sites</li>
+            </ul>
+        </ul>
+        <li>It is possible to throw your own exception with a throw statement</li>
+        <li>When an exception occurs, the program terminates with an error message</li>
+        <li>Use try, catch, and finally to handle exceptions (like Java)</li>
+        <li>Test-driven Development(TDD)</li>
+        <ul>
+            <li>Write tests (that initially fail)</li>
+            <li>Write code to pass the tests</li>
+            <li>Refactor the code</li>
+            <li>Test refactored code</li>
+            <li>Write more tests for new features</li>
+        </ul>
+        <li>Testing frameworks; Jest</li>
+        <li>Number cruncher can be used to test math code</li>
+        </ul>
+        <ul><h2>Questions</h2>
+            <li>As I've gone through this book, there are a lot of similarities to Java so I don't understand why I'm having such a hard time with it</li>
+            <li>How often should the try, catch, and finally be used during coding? It seems like in JavaScript we are more likely to use if, then or while loops</li>
+
+        </ul>
+
+    </body>
+    </html>
