@@ -15,9 +15,9 @@ export default class TodosController {
         const todoList = this.ls.getAllTodos;
         this.utilities.renderTodoList(this.parentElement,todoList);
         this.addTodoListener();
-    };
+    }
 }
-    showOneTodo(todoContent){
+    showOneTodo(todoContent) {
         const todo = this.ls.getTodoByName(todoContent);
         this.utilities.renderOneTodoFull(
             this.parentElement,
