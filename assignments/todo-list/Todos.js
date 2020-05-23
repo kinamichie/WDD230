@@ -17,7 +17,7 @@ export default class TodosController {
         this.addTodoListener();
     }
 }
-    showOneTodo(todoContent) {
+    function showOneTodo(todoContent) {
         const todo = this.ls.getTodoByName(todoContent);
         this.utilities.renderOneTodoFull(
             this.parentElement,
@@ -25,7 +25,7 @@ export default class TodosController {
                 this.showTodoList();
             };
 
-        addTodoListener() {
+    function addTodoListener() {
             const childrenArray=Array.from(this.parentElement.children);
             childrenArray.forEach(child=>{
                 child.addEventListener('touchend',e=>{
