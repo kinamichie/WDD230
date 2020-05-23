@@ -1,7 +1,14 @@
 //Create DOM manipulation helper functions
-function renderTodoList(parent,todos) {}
+export default class utilitiesController {
+    constuctor(parentId){
+        this.parentElement = document.getElementById(parentId);
+        this.ls = new ls();
+        this.utilities = new utilities(parentId);
 
-function renderOneTodo(todo) {
+    }
+    renderTodoList(parent,todos) {}
+
+    renderOneTodo(todo) {
     const item = document.createElement('li');
     item.innerHTML = `
     id.innerHTML = <li>${todo.id}</li>
@@ -9,7 +16,7 @@ function renderOneTodo(todo) {
     completed.innerHTML = <li>${todo.completed}</li> `
     return item; 
 }
-function renderOneTodoFull(todo){
+    renderOneTodoFull(todo){
     const item = document.createElement('li');
     item.innerHTML = `
     id.innerHTML = <li>${todo.id}</li>
@@ -20,4 +27,4 @@ function renderOneTodoFull(todo){
     parent.appendChild(item);
     }
 
-export default utilities;
+}
