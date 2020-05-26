@@ -16,8 +16,11 @@ const form = document.querySelector('form');
 const ul = document.querySelector('ul');
 const button = document.querySelector('button');
 const input = document.getElementById('todo');
+let todoArray = localStorage.getTodo('todo') ?
+JSON.parse(localStorage.getTodo('todo')) : []
 
-
+localStorage.setTodo('todo', JSON.stringify(todoList));
+const data=JSON.parse(localStorage.getTodos('todo'));
 
     const liMaker = text => {
         const li = document.getElementById('li');
@@ -26,20 +29,25 @@ const input = document.getElementById('todo');
     }
     form.addEventListener('submit', function(e) {
     e.preventDefault();
+
+    todoArray.push(input.value);
+    localStorage.setTodo('todo', JSON.stringify(todoArray));  
     
     liMaker(input.value);
     input.value = '';
 })
 
-let todoList = [];
-localStorage.setTodo('todo', JSON.stringify(todoList));
-const data=JSON.parse(localStorage.getTodos('todo'));
 
-todoList.push(input.value);
-localStorage.setTodo('todo', JSON.stringify(todosList));
 data.forEach(todo => {
     liMaker(todo);
 })
+
+button.addEventListener('click', function(){
+    localStorage.clear()
+    while (ul.firstChild {
+        ul.removeChild(ul.firstChild)}
+    })
+
 
 
 
