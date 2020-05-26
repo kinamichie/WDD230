@@ -86,31 +86,6 @@ function getFormData() {
     saveTodoItem(todoItem);
     }
 
-    function saveTodoItem(todoItem){
-        if (localStorage) {
-            var key = "todo" + todoItem.id;
-            var item = JSON.stringify(todoItem);
-            localStorage.setItem(key,item);
-        }else{
-            console.log("Error");
-             }
-            }
-    function deleteItem(e) {
-        var span = e.target;
-        var id = span.parentElement.id;
-        console.log("delete an item: " + id)
-
-        var key = "todo" + id;
-        localStorage.removeItem(key);
-        for (var i=0; i<todos.length; i++){
-            if (todos[i].id == id){
-                todos.splice(i,1);
-                break;
-            }
-        }
-        var li = e.target.parentElemet;
-        var ul = document.getElementById("todoList");
-        ul.removeChild(li);
-    }  
+   
       
 //Complete Todos.filterTodos()*/
