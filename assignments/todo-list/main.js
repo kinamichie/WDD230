@@ -71,7 +71,7 @@ return li;
 }
 
 function getFormData() {
-    var task = document.getElementById("task").value;
+    var task = document.getElementById("todo").value;
     if (checkInputText(task, "Please enter a task")) 
     return;
 
