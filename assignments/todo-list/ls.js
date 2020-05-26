@@ -1,14 +1,5 @@
 //create an array of the todo list
-const toDoList = [{
-    id: "Date",
-    content: "Task",
-    completed: true
-},
-{
-    id: "Date",
-    content: "Task",
-    completed: false
-}];
+let toDoList = [];
 //create local storage helper functions
 
 export default class ToDos {
