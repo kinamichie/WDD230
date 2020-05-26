@@ -35,14 +35,14 @@ function getTodoItems(){
                 todos.push(todoItem)
             }
         }
-   addTodo();
+   addTodosToPage();
     
 } else {
     console.log("Error");
 }
 }
 //Complete Todos.addTodo()
-function addTodo() {
+function addTodosToPage() {
     var ul = document.getElementById("todoList")
     var listFragment = document.createDocumentFragment();
     for (var i=0; i< todos.length; i++) {
@@ -54,7 +54,7 @@ function addTodo() {
 }
 
 //function Todos.addTodo()
-function addTodo(todoItem) {
+function addTodoToPage(todoItem) {
     var ul = document.getElementById("todoList");
     var li = createNewTodo(todoItem);
     ul.appendChild(li);
