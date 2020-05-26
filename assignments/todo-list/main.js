@@ -2,7 +2,7 @@ import * as TodoController from './Todos.js';
 import * as utilities from './utilities.js';
 
 //Create an instance of our Todos class
-class Todo  {
+class TodoView  {
     constructor(id, content, completed){
     this.id = id;
     this.content = content;
@@ -11,13 +11,14 @@ class Todo  {
 }
 
 //Add a variable to store our list of tasks to the Todos.js module. todoList = null
-todoList = [todo];
+let todoList = [todo];
 
-
-//for (i; i<todoList.length; i++){
-
-//}
-
+class todo {id: timestamp, content: String, completed: bool}
+function addTodo(){
+    var y =
+    document.getElementsById("myTask").value;
+    document.getElementsById("todo").innerHTML = y;
+}
 
 
 //Create saveTodo(task, key)
@@ -31,7 +32,9 @@ function getTodos(key){
 }
 
 //Complete Todos.addTodo()
-function Todos.addTodo(){}
+function Todos.addTodo(){
+
+}
 
 //Bind Todos.addTodo to the Add button on our add todo form in the html
 
@@ -42,7 +45,7 @@ function Todos.addTodo(){}
 //Complete Todos.completeTodo()
 Function Todos.completeTodos(){
     var x = document.getElementsByClassName("mycheck");
-    xchecked = true;
+    x.checked = true;
 }
 
 //Complete Todos.removeTodo()

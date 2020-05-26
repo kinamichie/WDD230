@@ -7,8 +7,8 @@ import utilities from './utilities.js';
 export default class TodosController {
     constuctor(parentId){
         this.parentElement = document.getElementById(parentId);
-        this.ls = new ls();
-        this.utilities = new utilities(parentId);
+        this.ls = new Ls();
+        this.utilities = new Utilities(parentId);
 
     }
     showTodoList() {
@@ -17,7 +17,7 @@ export default class TodosController {
         this.addTodoListener();
     }
 }
-    function showOneTodo(todoContent) {
+    function showActiveTodo(todoContent) {
         const todo = this.ls.getTodoByName(todoContent);
         this.utilities.renderOneTodoFull(
             this.parentElement,

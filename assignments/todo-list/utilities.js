@@ -32,6 +32,8 @@ export default class utilitiesController {
     </div>
     <div class="newTodo">
         <input type="checkbox"  class="myCheck" onclick="completed()">
+        <input type="text" id="myTask" placeholder="Task">
+        <button onclick="addTodo() class="button">U+FF0B</button>
     </div>
      `
     return item; 
