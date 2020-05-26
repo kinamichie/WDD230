@@ -13,7 +13,8 @@ export default class utilitiesController {
     item.innerHTML = `
     <div class="list">
     id.innerHTML = <li>${todo.id}</li>
-    content.innerHTML = <li>${todo.content}</li>
+    content.innerHTML = <li>
+        <input type="checkbox"  class="myCheck" onclick="completed()">${todo.content}</li>
     completed.innerHTML = <li>${todo.completed}</li>
     </div>
     <div class="bottom">
@@ -30,15 +31,14 @@ export default class utilitiesController {
         <p>${todo.completed}</p>
         </div>
     </div>
-    <div class="newTodo">
-        <input type="checkbox"  class="myCheck" onclick="completed()">
-        <input type="text" id="myTask" placeholder="Task">
+    <form class="newTodo">
+        <input type="text" id="myTask" placeholder="Task" required />
         <button onclick="addTodo() class="button">U+FF0B</button>
-    </div>
+    </form>
      `
     return item; 
 }
-    renderActiveTodoFull(todo){
+    renderActiveTodo(todo){
     const item = document.createElement('li');
     item.innerHTML = `
     id.innerHTML = <li>${todo.id}</li>
