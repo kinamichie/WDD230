@@ -14,9 +14,13 @@ export default class utilitiesController {
     <div class="list">
     id.innerHTML = <li>${todo.id}</li>
     content.innerHTML = <li>
-        <input type="checkbox"  class="myCheck" onclick="completed()">${todo.content}</li>
+        <span class="notDone"></span>
+        <span> </span>
+        <span id="1" class"delete>&#1007</span>
+        </li>
+        <div>
     completed.innerHTML = <li>${todo.completed}</li>
-    </div>
+    </div>4
     <div class="bottom">
         <div class="left"> 
         <p>${todo.left}</p>

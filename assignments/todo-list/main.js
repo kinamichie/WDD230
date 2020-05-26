@@ -89,7 +89,6 @@ function CreateNewTodo(todoItem) {
 
 //Complete Todos.removeTodo()
 var spanDelete = document.createElement("span");
-spanDelete.setAttribute("id", todoItem.id);
 spanDelete.setAttribute("class", "delete");
 spanDelete.innerHTML = "&nbsp,&#10007;&nbsp;";
 
@@ -111,8 +110,8 @@ function getFormData() {
     if (checkInputText(date, "Please enter a due date")) 
     return;
 
-    var id = todos.length;
-    var todoItem = new TodoController(id, task, date);
+    var id = (new Date()).getTime();
+    var todoItem = new Todo(id, task);
     todos.push(todoItem);
     addTodo(todoItem);
     saveTodoItem(todoItem);
@@ -128,7 +127,21 @@ function getFormData() {
              }
             }
     function deleteItem(e) {
-        var id = e.target.id;
+        var span = e.target;
+        var id = span.parentElement.id;
         console.log("delete an item: " + id)
-    }    
+
+        var key = "todo" + id;
+        localStorage.removeItem(key);
+        for (var i=0; i<todos.length; i++){
+            if (todos[i].id == id){
+                todos.splice(i,1);
+                break;
+            }
+        }
+        var li = e.target.parentElemet;
+        var ul = document.getElementById("todoList");
+        ul.removeChild(li);
+    }  
+      
 //Complete Todos.filterTodos()*/
