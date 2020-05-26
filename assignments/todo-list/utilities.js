@@ -32,7 +32,7 @@ export default class utilitiesController {
         </div>
     </div>
     <form class="newTodo">
-        <input type="text" id="myTask" placeholder="Task" required />
+        <input type="text" id="myTask" placeholder="Task" required>
         <button onclick="addTodo() class="button">U+FF0B</button>
     </form>
      `

@@ -17,18 +17,23 @@ const ul = document.querySelector('ul');
 const button = document.querySelector('button');
 const input = document.getElementById('todo');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
 
+
+    const liMaker = text => {
+        liMaker.textContent = text;
+        ul.appendChild(li);
+    }
+    form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
     liMaker(input.value);
     input.value = '';
-}) 
+})
 
 let todoList = [];
 localStorage.setTodo('todo', JSON.stringify(todoList));
 const data=JSON.parse(localStorage.getTodos('todo'));
 
-e.preventDefault();
 todoList.push(input.value);
 localStorage.setTodo('todo', JSON.stringify(todosList));
 data.forEach(todo => {
