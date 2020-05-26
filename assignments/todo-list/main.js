@@ -20,6 +20,7 @@ const input = document.getElementById('todo');
 
 
     const liMaker = text => {
+        const li = document.getElementById('li');
         liMaker.textContent = text;
         ul.appendChild(li);
     }
