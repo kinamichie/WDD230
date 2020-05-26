@@ -12,78 +12,123 @@ class TodoView  {
 }
 
 //Add a variable to store our list of tasks to the Todos.js module. todoList = null
-const form = document.querySelector('form');
-const ul = document.querySelector('ul');
-const button = document.querySelector('button');
-const input = document.getElementById('todo');
-let todoArray = localStorage.getTodo('todo') ?
-JSON.parse(localStorage.getTodo('todo')) : []
-
-localStorage.setTodo('todo', JSON.stringify(todoList));
-const data=JSON.parse(localStorage.getTodos('todo'));
-
-    const liMaker = text => {
-        const li = document.getElementById('li');
-        liMaker.textContent = text;
-        ul.appendChild(li);
-    }
-    form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    todoArray.push(input.value);
-    localStorage.setTodo('todo', JSON.stringify(todoArray));  
-    
-    liMaker(input.value);
-    input.value = '';
-})
-
-
-data.forEach(todo => {
-    liMaker(todo);
-})
-
-button.addEventListener('click', function(){
-    localStorage.clear()
-    while (ul.firstChild) {
-        ul.removeChild(ul.firstChild)}
-    })
-
-
-
-
+var todos = new Array();
+window.onload = init;
 
 //Create saveTodo(task, key)
-/*function saveTodo(task, key){
-
+function init() {
+    var addButton = document.getElementById("myTask");
+    addButton.onclick = getFormData;
+    getTodoItems()
 }
 
-//Create getTodos(key) function
-function getTodos(key){
+
+
+//Create getTodoItems(key) function
+function getTodoItems(){
+    if (localStorage) {
+        for (var i=0; i<localStorage.length; i++) {
+            var key = localStorage.key(i);
+            if (key.substring(0,4) == "todo") {
+                var item = localStorage.getItem(key);
+                var todoItem = JSON.parse(item);
+                todos.push(todoItem)
+            }
+        }
+   addTodo();
     
+} else {
+    console.log("Error");
+}
+}
+//Complete Todos.addTodo()
+function addTodo() {
+    var us = document.getElementById("todoList")
+    var listFragment = document.createDocumentFragment();
+    for (var i=0; i< todos.length; i++) {
+        var todoItem = todos[i];
+        var li = createNewTodo(todoItem);
+        listFragment.appendChild(li);
+    }
+    ul.appendChild(listFragment);
 }
 
-//Complete Todos.addTodo()
-//function Todos.addTodo(){
+//function Todos.addTodo()
+function addTodo(todoItem) {
+    var ul = document.getElementById("todoList");
+    var li = createNewTodo(todoItem);
+    ul.appendChild(li);
+    document.forms[0].reset;
+}
 
-//}
 
 //Bind Todos.addTodo to the Add button on our add todo form in the html
-function addTodo(){
-    var y =
-    document.getElementsById("myTask").value;
-    document.getElementsById("todo").innerHTML = y;
-}
+function CreateNewTodo(todoItem) {
+    var li = document.getElementById("li");
+    var spanTodo = document.getElementById("newTodo");
+    spanTodo.innerHTML =  todoItem.content + todoItem.dueDate;
+
+    var spanDone = document.createElement("span");
+    if (!todoItem.done) {
+        spanDone.setAttribute("class", "notDone")
+        spanDone.innterHTML = "&nbsp;&nbsp;";
+    }
+    else {spanDone.setAttribute("class", "done")
+        spandDone.innerHTML = "&nbsp;&#10004;&nbsp;";
+    }
+
+
+
 
 //Create the renderTodoList(list, element) function
 
 //Complete Todos.listTodos()
 
 //Complete Todos.completeTodo()
-Function todos.completeTodos(){
-    var x = document.getElementsByClassName("mycheck");
-    x.checked = true;
-}
+
 
 //Complete Todos.removeTodo()
+var spanDelete = document.createElement("span");
+spanDelete.setAttribute("id", todoItem.id);
+spanDelete.setAttribute("class", "delete");
+spanDelete.innerHTML = "&nbsp,&#10007;&nbsp;";
 
+spanDelete.onclick = deleteItem;
+
+li.appendChild(spanDone);
+li.appendChild(spanTodo);
+li.appendChild(spanDelete);
+
+return li;
+}
+
+function getFormData() {
+    var task = document.getElementById("task").value;
+    if (checkInputText(task, "Please enter a task")) 
+    return;
+
+    var date = document.getElementById("dueDate").value;
+    if (checkInputText(date, "Please enter a due date")) 
+    return;
+
+    var id = todos.length;
+    var todoItem = new TodoController(id, task, date);
+    todos.push(todoItem);
+    addTodo(todoItem);
+    saveTodoItem(todoItem);
+    }
+
+    function saveTodoItem(todoItem){
+        if (localStorage) {
+            var key = "todo" + todoItem.id;
+            var item = JSON.stringify(todoItem);
+            localStorage.setItem(key,item);
+        }else{
+            console.log("Error");
+             }
+            }
+    function deleteItem(e) {
+        var id = e.target.id;
+        console.log("delete an item: " + id)
+    }    
 //Complete Todos.filterTodos()*/

@@ -31,10 +31,10 @@ export default class utilitiesController {
         <p>${todo.completed}</p>
         </div>
     </div>
-    <form class="newTodo">
+    <span class="newTodo">
         <input type="text" id="myTask" placeholder="Task" required>
         <button onclick="addTodo() class="button">U+FF0B</button>
-    </form>
+    </span>
      `
     return item; 
 }
