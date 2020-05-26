@@ -43,7 +43,7 @@ function getTodoItems(){
 }
 //Complete Todos.addTodo()
 function addTodo() {
-    var us = document.getElementById("todoList")
+    var ul = document.getElementById("todoList")
     var listFragment = document.createDocumentFragment();
     for (var i=0; i< todos.length; i++) {
         var todoItem = todos[i];
