@@ -13,48 +13,17 @@ class TodoView  {
 
 //Add a variable to store our list of tasks to the Todos.js module. todoList = null
 var todos = new Array();
-window.onload = init;
 
 //Create saveTodo(task, key)
-function init() {
-    var addButton = document.getElementById("myTask");
-    addButton.onclick = getFormData;
-    getTodoItems()
-}
-
+localStorage.saveTodo(task, key);
 
 
 //Create getTodoItems(key) function
-function getTodoItems(){
-    if (localStorage) {
-        for (var i=0; i<localStorage.length; i++) {
-            var key = localStorage.key(i);
-            if (key.substring(0,4) == "todo") {
-                var item = localStorage.getItem(key);
-                var todoItem = JSON.parse(item);
-                todos.push(todoItem)
-            }
-        }
-   addTodosToPage();
-    
-} else {
-    console.log("Error");
-}
-}
+ var data = localStorage.getItem('task');
 //Complete Todos.addTodo()
-function addTodosToPage() {
-    var ul = document.getElementById("todoList")
-    var listFragment = document.createDocumentFragment();
-    for (var i=0; i< todos.length; i++) {
-        var todoItem = todos[i];
-        var li = createNewTodo(todoItem);
-        listFragment.appendChild(li);
-    }
-    ul.appendChild(listFragment);
-}
 
 //function Todos.addTodo()
-function addTodoToPage(todoItem) {
+function addTodo() {
     var ul = document.getElementById("todoList");
     var li = createNewTodo(todoItem);
     ul.appendChild(li);
