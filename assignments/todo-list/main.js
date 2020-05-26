@@ -44,7 +44,7 @@ data.forEach(todo => {
 
 button.addEventListener('click', function(){
     localStorage.clear()
-    while (ul.firstChild {
+    while (ul.firstChild) {
         ul.removeChild(ul.firstChild)}
     })
 
