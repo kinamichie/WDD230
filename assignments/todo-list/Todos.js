@@ -1,6 +1,13 @@
 //import helper functions
 import ls from './ls.js';
 import utilities from './utilities.js';
+function loadTodos(){
+    const todoList = ls.getTodoList();
+    todoList.forEach(todo => {
+        const el = createTodoElement(todo)
+        addToList(el);
+    })
+}
 
 //default export for the module
 
