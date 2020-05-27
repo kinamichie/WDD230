@@ -6,17 +6,15 @@
         this.utilities = new utilities(parentId);
 
     }*/
-    renderTodoList(parent,todos) {}
+    //renderTodoList(parent,todos) {}
 
-    renderAllTodo(todo) {
+    //renderAllTodo(todo);
     const item = document.createElement('li');
     item.innerHTML = `
-    <div class="list">
-    id.innerHTML = <li>${todo.id}</li>
-    content.innerHTML = <li>
-        <span class="notDone"></span>
-        <span> </span>
-        <span id="1" class"delete>&#1007</span>
-        </li>
-        </div>
+        <li>box</li>
+        <li>task</li>
+        <li>checkmark</li>
+        `
+    
+    return item;
     

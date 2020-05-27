@@ -4,34 +4,58 @@ import utilities from './utilities.js';
 
 //default export for the module
 
-export default class TodosController {
-    constuctor(parentId){
-        this.parentElement = document.getElementById(parentId);
-        this.ls = new Ls();
-        this.utilities = new Utilities(parentId);
+document.querySelector("addButton").onclick = toTodo;
 
+function newTodo() {
+    const todo = createTodo();
+    const todoDiv = createTodoElement(todo);
+    addToList(todoDiv);
+    ls.saveTodo(todo);
+}  
+
+//create Todo()
+function createTodo(){
+    const input = document.querySelector('#todoInput');
+    const newTodo = { id: Date.now(), content: input.nodeValue, completed: false 
     }
-    showTodoList() {
-        const todoList = this.ls.getAllTodos;
-        this.utilities.renderTodoList(this.parentElement,todoList);
-        this.addTodoListener();
-    }
+    input.value = '';
+    return newTodo;
 }
-    function showActiveTodo(todoContent) {
-        const todo = this.ls.getTodoByName(todoContent);
-        this.utilities.renderOneTodoFull(
-            this.parentElement,
-            todo).ontouch=() => {
-                this.showTodoList();
-            };
+//createtodoElement
+function createTodoElement(todo) {
+    //todo div
+    const todoDiv = document.createElement('div');
+    todoDiv.classList.add('todo');
+    //complete button
+    const completeBtn = document.createElement('button');
+    completeBtn.classList.add('complete-btn');
+    //todo content
+    const todoContent = document.createElement('button');
+    todoContent.classList.add('todo-content');
 
-    function addTodoListener() {
-            const childrenArray=Array.from(this.parentElement.children);
-            childrenArray.forEach(child=>{
-                child.addEventListener('touchend',e=>{
-                    this.showOneTodo(e.currentTarget.dataset.content);
-                });
-            });
-        }
-    
+    //delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('todo-delete-btn');
+    deleteBtn.innerText = "X";
+    deleteBtn.onclick = deleteTodo;
+
+
+    todoDiv.appendChild(completeBtn);
+    todoDiv.appendChild(todoContent);
+    todoDiv.appendChild(deleteBtn);
+
+    return todoDiv;
+}
+
+function addToList(todoDiv){
+    //Add to the document
+    document.querySelector('#todos').appendChild(todoDiv);
+}
+
+//Event handlers
+function deleteTodo(e) {
+    const btn = e.currentTarget;
+    ls.deleteTodo(btn.getAttribute('data-id'));
+    document.querySelector('#toddos').innerHTML = '';
+    loadTodos();
 }

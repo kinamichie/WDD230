@@ -1,0 +1,39 @@
+<html lang="en-us">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel='stylesheet' href='style.css'>
+     <title>To-Do List</title>
+ </head>
+ <body>
+    
+     
+    <div class="myTitle"><h1>Todos</h1>
+    </div>
+    <ul class="todoList">
+        
+    </ul>
+    <div class="bottom">
+        <div class="left"> 
+        <p>${todo.left}</p>
+        </div>
+        <div class="all">
+        <p>${todo.all}</p>
+        </div>
+        <div class="active">
+        <p>${todo.active}</p>
+        </div>
+        <div class="completed">
+        <p>${todo.completed}</p>
+        </div>
+    </div >
+    <span class="newTodo">
+        <input type="text" id="myTask" placeholder="Task" required>
+        <button onclick="addTodo()" class="button">U+FF0B</button>
+    </span>
+    
+     
+
+<script src="utilities.js"  ></script>
+</body>
+</html>

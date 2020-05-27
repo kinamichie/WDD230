@@ -4,15 +4,29 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel='stylesheet' href='main.css'>
      <title>To-Do List</title>
+     <script type="module" src="Todos.js"></script>
  </head>
  <body>
      
-    <div class="myTitle"><h1>Todos</h1>
+    <div class="container">
+        <h1>Todos</h1>
+
+    <div class="todos-wrapper">
+        <div id="todos">
+
+        </div>
+        <div class="todo-filters">
+
+        </div>
     </div>
-    <ul class="todoList"></ul>
+    <div class="add-todo-wrapper">
+        <input id="todoInput" type="text">
+        <button id="addBtn">Add</button>
+        </div>
+    </div>
    
      
 
-<script src="main.js" type="module" ></script>
+
 </body>
 </html>

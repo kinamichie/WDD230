@@ -1,18 +1,28 @@
-//create an array of the todo list
-let toDoList = [];
-//create local storage helper functions
+function saveTodo(todo) {
+    const toDoList = getTodoList();
+    toDoList.push(todo);
+    localStorage.setItem('toDoList', JSON.stringify(toDoList));
+}
+//delete id list
+function deleteTodo(id) {
+    const toDoList = getTodoList();
 
-export default class ToDos {
-    constructor(elementId) {
-        this.parentElement=document.getElementById(elementID);
-        this.backButton=this.buildBackButton();
-    }
-    //Return list of tasks
-    getAllTodos(){
-        return toDoList;
-    }
-    //Get todos by completed
-    getTodosByContent(todoContent){
-        return this.getAllTodos().find(todo.content===todo.Content);
-    }
+    const updatedTodos = toDoList.filter( todo => todo.id != id)
+    localStorage.setItem('toDoList', JSON.stringify(updatedTodos));
+}
+//get todoList
+function getTodoList() {
+    const todoListString = localStorage.getItem('toDoList');
+    let todoList = {};
+
+    if (todoListString){
+    todoList = JSON.parse(todoListString);
+         
+    } return todoList;
+}
+//export
+export default {
+    saveTodo,
+    getTodoList,
+    deleteTodo
 }
