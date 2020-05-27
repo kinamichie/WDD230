@@ -13,7 +13,7 @@ function deleteTodo(id) {
 //get todoList
 function getTodoList() {
     const todoListString = localStorage.getItem('toDoList');
-    let todoList = {};
+    let todoList = [];
 
     if (todoListString){
     todoList = JSON.parse(todoListString);
