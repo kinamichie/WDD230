@@ -1,6 +1,7 @@
 //import helper functions
 import ls from './ls.js';
 import utilities from './utilities.js';
+
 function loadTodos(){
     const todoList = ls.getTodoList();
     todoList.forEach(todo => {
@@ -11,7 +12,7 @@ function loadTodos(){
 
 //default export for the module
 
-document.querySelector("addButton").onclick = toTodo;
+document.querySelector("addBtn").onclick = toTodo;
 
 function newTodo() {
     const todo = createTodo();
