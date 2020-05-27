@@ -35,9 +35,12 @@ function createTodoElement(todo) {
     //todo div
     const todoDiv = document.createElement('div');
     todoDiv.classList.add('todo');
+
     //complete button
-    const completeBtn = document.createElement('button');
+    const completeBtn = document.createElement('checkbox');
+    completeBtn.setAttribute('data-completed', todo.completed);
     completeBtn.classList.add('complete-btn');
+  
     //todo content
     const todoContent = document.createElement('div');
     todoContent.innerText = todo.content;
@@ -69,4 +72,13 @@ function deleteTodo(e) {
     ls.deleteTodo(btn.getAttribute('data-id'));
     document.querySelector('#todos').innerHTML = '';
     loadTodos();
+}
+//complete
+function completeTodo() {
+    const checkbox = document.getElementById('data-completed');
+    if(checkbox.checked == true){
+        style.display = "block";
+    }else {
+        style.display = "none";
+    }
 }

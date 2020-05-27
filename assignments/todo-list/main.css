@@ -8,7 +8,10 @@
     margin: 0;
     padding: 0;
   }
-  
+  /*put elements of todo list in horizontal order*/
+  #todos {
+    
+  }
   
   /* Style the list items */
   .todo-content {
