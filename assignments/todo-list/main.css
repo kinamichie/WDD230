@@ -10,7 +10,7 @@
   }
   
   /* Style the list items */
-  .todos {
+  .todos-wrapper .todos {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
@@ -26,12 +26,12 @@
   }
   
   /* Set all odd list items to a different color (zebra-stripes) */
-  .todos:nth-child(odd) {
+  .todos-wrapper .todos:nth-child(odd) {
     background: #f9f9f9;
   }
   
   /* Darker background-color on hover */
-  .todos:hover {
+  .todos-wrapper .todos:hover {
     background: #ddd;
   }
   
@@ -87,7 +87,7 @@
   /* Style the input */
   #todoInput {
     margin: 0;
-    border: 2px solid #000000;
+    border: 2px solid #8D99AE;
     border-radius: 0;
     width: 75%;
     padding: 10px;
