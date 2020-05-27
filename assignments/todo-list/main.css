@@ -11,7 +11,7 @@
   
   
   /* Style the list items */
-  #todos {
+  .todo-content {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
@@ -27,12 +27,12 @@
   }
   
   /* Set all odd list items to a different color (zebra-stripes) */
-  #todos:nth-child(odd) {
+  .todos-content:nth-child(odd) {
     background: #f9f9f9;
   }
   
   /* Darker background-color on hover */
-  #todos:hover {
+  .todos-content:hover {
     background: #ddd;
   }
   
@@ -67,7 +67,7 @@
   
   .todo-delete-btn:hover {
     background-color: #7BDFF2;
-    color: white;
+    color: #000000;
   }
   
   /* Style the header */
