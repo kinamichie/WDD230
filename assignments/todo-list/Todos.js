@@ -45,6 +45,7 @@ function createTodoElement(todo) {
 
     //delete button
     const deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute('data-id', todo.id);
     deleteBtn.classList.add('todo-delete-btn');
     deleteBtn.innerText = "X";
     deleteBtn.onclick = deleteTodo;
