@@ -1,8 +1,8 @@
 //import helper functions
-import ls from './ls.js';
 import utilities from './utilities.js';
+import ls from './ls.js';
 
-document.querySelector("#addBtn").onclick = newTodo;
+document.querySelector('#addBtn').onclick = newTodo;
 
 function loadTodos(){
     const todoList = ls.getTodoList();
