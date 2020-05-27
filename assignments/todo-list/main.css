@@ -7,15 +7,16 @@
   .todos-wrapper {
     margin: 0;
     padding: 0;
-  } 
+  }
   
   /* Style the list items */
   #todos {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    font: #000000;
-    
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
   
     /* make the list items unselectable */
     -webkit-user-select: none;
