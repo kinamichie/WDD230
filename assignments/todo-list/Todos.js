@@ -12,8 +12,7 @@ function loadTodos(){
 
 //default export for the module
 
-document.querySelector("addBtn").onclick = toTodo;
-
+document.querySelector("addBtn").onclick = todo;
 function newTodo() {
     const todo = createTodo();
     const todoDiv = createTodoElement(todo);
