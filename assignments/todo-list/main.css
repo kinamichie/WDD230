@@ -4,7 +4,56 @@
   }
   
   /* Remove margins and padding from the list */
-
+  .todos-wrapper {
+    margin: 0;
+    padding: 0;
+  } 
+  
+  /* Style the list items */
+  #todos {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    font: #000000;
+    
+  
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  #todos:nth-child(odd) {
+    background: #f9f9f9;
+  }
+  
+  /* Darker background-color on hover */
+  #todos:hover {
+    background: #ddd;
+  }
+  
+  /* When clicked on, add a background color and strike out text */
+  .complete-btn.checked {
+    background: #B2F7EF;
+    color: #fff;
+    text-decoration: line-through;
+  }
+  
+  /* Add a "checked" mark when clicked on */
+  .complete-btn.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 16px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
   
   /* Style the delete button */
   .todo-delete-btn {

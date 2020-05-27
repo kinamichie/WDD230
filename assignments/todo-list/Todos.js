@@ -7,7 +7,7 @@ document.querySelector('#addBtn').onclick = newTodo;
 function loadTodos(){
     const todoList = ls.getTodoList();
     todoList.forEach(todo => {
-        const el = createTodoElement(todo)
+        const el = createTodoElement(todo);
         addToList(el);
     })
 }
@@ -25,8 +25,7 @@ function newTodo() {
 //create Todo()
 function createTodo(){
     const input = document.querySelector('#todoInput');
-    const newTodo = { id: Date.now(), content: input.value, completed: false 
-    }
+    const newTodo = { id: Date.now(), content: input.value, completed: false}
     input.value = '';
     return newTodo;
 }
