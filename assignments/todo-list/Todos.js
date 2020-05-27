@@ -25,7 +25,7 @@ function newTodo() {
 //create Todo()
 function createTodo(){
     const input = document.querySelector('#todoInput');
-    const newTodo = { id: Date.now(), content: input.nodeValue, completed: false 
+    const newTodo = { id: Date.now(), content: input.value, completed: false 
     }
     input.value = '';
     return newTodo;
@@ -39,7 +39,7 @@ function createTodoElement(todo) {
     const completeBtn = document.createElement('button');
     completeBtn.classList.add('complete-btn');
     //todo content
-    const todoContent = document.createElement('button');
+    const todoContent = document.createElement('div');
     todoContent.classList.add('todo-content');
 
     //delete button
