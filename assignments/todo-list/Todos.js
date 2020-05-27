@@ -40,6 +40,7 @@ function createTodoElement(todo) {
     const completeBtn = document.createElement('checkbox');
     completeBtn.setAttribute('data-completed', todo.completed);
     completeBtn.classList.add('complete-btn');
+    completeBtn.innerHTML= "checkbox";
     completeBtn.onclick = completeTodo;
   
     //todo content
