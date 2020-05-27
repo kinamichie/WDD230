@@ -2,6 +2,7 @@
 import ls from './ls.js';
 import utilities from './utilities.js';
 
+document.querySelector("addBtn").onclick = newTodo;
 function loadTodos(){
     const todoList = ls.getTodoList();
     todoList.forEach(todo => {
@@ -12,7 +13,7 @@ function loadTodos(){
 
 //default export for the module
 
-document.querySelector("addBtn").onclick = todo;
+
 function newTodo() {
     const todo = createTodo();
     const todoDiv = createTodoElement(todo);
