@@ -9,18 +9,15 @@
     padding: 0;
   }
 
-  .todo-content {
-    font-size: 18px;
-  }
+ 
   
   /* Style the list items */
   #todos {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #eee;
-    font-size: 18px;
-    transition: 0.2s;
+    font: #000000;
+    
   
     /* make the list items unselectable */
     -webkit-user-select: none;
