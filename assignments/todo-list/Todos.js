@@ -2,7 +2,7 @@
 import ls from './ls.js';
 import utilities from './utilities.js';
 
-document.querySelector("addBtn").onclick = newTodo;
+document.querySelector("#addBtn").onclick = newTodo;
 function loadTodos(){
     const todoList = ls.getTodoList();
     todoList.forEach(todo => {
