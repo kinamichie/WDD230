@@ -6,6 +6,7 @@ document.querySelector('#addBtn').onclick = newTodo;
 
 function loadTodos(){
     const todoList = ls.getTodoList();
+
     todoList.forEach(todo => {
         const el = createTodoElement(todo)
         addToList(el);
@@ -39,6 +40,7 @@ function createTodoElement(todo) {
     completeBtn.classList.add('complete-btn');
     //todo content
     const todoContent = document.createElement('div');
+    todoContent.innerText = todo.content;
     todoContent.classList.add('todo-content');
 
     //delete button
