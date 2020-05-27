@@ -85,7 +85,7 @@
   }
   
   /* Style the input */
-  .todo-input {
+  #todo-input {
     margin: 0;
     border: 2px;
     border-radius: 0;
