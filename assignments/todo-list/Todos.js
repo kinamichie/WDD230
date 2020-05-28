@@ -77,7 +77,7 @@ function deleteTodo(e) {
 }
 //complete
 function completeTodo() {
-    const checkbox = document.getElementById('data-completed');
+    const checkbox = document.getElementById('checkbox');
     if(checkbox.checked == true){
         style.display = "block";
     }else {
