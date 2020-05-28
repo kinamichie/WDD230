@@ -75,6 +75,29 @@ function deleteTodo(e) {
 }
 //render list
 
+function renderTodo(todo) {
+    const list = document.querySelector('todoList');
+    list.insertAdjacentHTML('beforeend', `
+      <div class="todos" data-key="${todo.id}">
+        <button id="${todo.id}" type="checkbox" class="complete-btn"></button>
+        <label for="${todo.id}" class="tick js-tick"></label>
+        <div>${todo.text}</div>
+        <button class="todo-delete-button delete-todo">
+         </button>
+      </li>
+    `);
+  }
+  
+  function addTodo(content) {
+    const todos = {
+      content: inputValue,
+      completed: false,
+      id: Date.now(),
+    };
+  
+    todoItems.push(todo);
+    renderTodo(todo);
+  }
 
 //completed todos function
 function completeTodo(todo) {
@@ -87,4 +110,5 @@ function completeTodo(todo) {
     }
 
 }
-//filter function 
+//filter functions
+
