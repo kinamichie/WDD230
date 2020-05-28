@@ -38,8 +38,11 @@ function createTodoElement(todo) {
 
     //complete button
     const completeBtn = document.createElement('button');
-    completeBtn.classList.add('complete-btn');      
-    //todoContent.onclick = completeTodo;
+    completeBtn.setAttribute('type', 'checkbox');
+    completeBtn.setAttribute('check', todo.completed);
+    completeBtn.classList.add('complete-btn'); 
+    completeBtn.onclick = check();  
+    
 
     //todo content
     const todoContent = document.createElement('div');
@@ -73,22 +76,17 @@ function deleteTodo(e) {
     document.querySelector('#todos').innerHTML = '';
     loadTodos();
 }
-//render list
-
-
-  
-
-//completed todos function
-/*function completeTodo(todo) {
-        if (!todo.completed) {
-        completeBtn.setAttribute('data-completed', todo.notCompleted)
-        completeBtn.innterHTML = "&nbsp;&nbsp;";
+function check(){ 
+    var text = document.getElementById('check');
+    if (checkBox.checked == true){
+        text.style.display="line-through";
+    } else {
+        text.style.display="none";
     }
-    else {completeBtn.setAttribute('data-completed', todo.completed)
-        completeBtn.innerHTML = "&nbsp;&#10004;&nbsp;";
-    }
+}   
 
-}*/
+
+ 
 //filter functions
 
 function createTodoFilter(todo){
@@ -104,18 +102,21 @@ function createTodoFilter(todo){
     const showAllBtn = document.createElement('button');
     showAllBtn.setAttribute('data-content', todo.content);
     showAllBtn.classList.add('showAllTodos');
+    showAllBtn.innerText = "All";
     showAllBtn.onclick = showAllTodos;    
 
     //active button
     const activeBtn = document.createElement('button');
     activeBtn.setAttribute('data-notCompleted', todo.completed);
     activeBtn.classList.add('active-btn');
+    activeBtn.innerText = "Active";
     activeBtn.onclick = activeTodos;
 
     //completed button
     const doneBtn = document.createElement('button');
     doneBtn.setAttribute('data-done', todo.completed);
     doneBtn.classList.add('done-btn');
+    doneBtn.innerText = "Completed";
     doneBtn.onclick = doneTodos;
 
     todoFiltersDiv.appendChild(tasksLeft);
@@ -124,4 +125,29 @@ function createTodoFilter(todo){
     todoFiltersDiv.appendChild(doneBtn);
 
     return todoFiltersDiv;
+}
+
+function showAllTodos(){
+    var allList  = [];
+    for (var i = 0; i< todoList.length; i++){
+        allList.push(todo[i]);
+    }
+}
+
+function activeTodos() {
+    var activeList = [];
+    for (var i = 0; i< todoList.length; i++){
+        if (todo[i].complete === 'false'){
+            activeList.push(todo[i]);
+        }
+    }    
+    }
+
+function doneTodos() {
+    var doneList = [];
+    for (var i = 0; i< todoList.length; i++){
+        if (todo[i].complete !== 'false'){
+            doneList.push(todo[i]);
+        }
+    }
 }
