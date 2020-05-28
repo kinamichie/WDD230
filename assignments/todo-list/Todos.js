@@ -38,21 +38,13 @@ function createTodoElement(todo) {
 
     //complete button
     const completeBtn = document.createElement('button');
-    //completeBtn.classList.add('complete-btn');
-    if (!todo.completed) {
-        completeBtn.setAttribute('class', 'notCompleted');
-        completeBtn.innterHTML = "&nbsp;&nbsp;";
-    }
-    else {completeBtn.setAttribute('class', 'completed');
-        completeBtn.innerHTML = "&nbsp;&#10004;&nbsp;";
-    }
-    
-    
-  
+    completeBtn.classList.add('complete-btn');      
+    todoContent.onclick = completeTodo;
+
     //todo content
     const todoContent = document.createElement('div');
     todoContent.innerText = todo.content;
-    todoContent.classList.add('todo-content');
+    todoContent.classList.add('todo-content');    
 
     //delete button
     const deleteBtn = document.createElement('button');
@@ -82,8 +74,9 @@ function deleteTodo(e) {
     loadTodos();
 }
 //complete
-/*function completeTodo(todo) {
-    if (!todo.complete) {
+function completeTodo(todo) {
+    this.completed = false;
+    if (!todo.completed) {
         completeBtn.setAttribute("class", "notDone")
         completeBtn.innterHTML = "&nbsp;&nbsp;";
     }
@@ -91,7 +84,10 @@ function deleteTodo(e) {
         completeBtn.innerHTML = "&nbsp;&#10004;&nbsp;";
     }
 
-}*/
-//function myFunction() {
- //   
- // }
+}
+//filter function 
+jsonObj.forEach(function (element, index){
+    if (element['completed'] === 'false'){
+        console.log('found', element);
+    }
+})
