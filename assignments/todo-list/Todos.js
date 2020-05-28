@@ -40,10 +40,10 @@ function createTodoElement(todo) {
     const completeBtn = document.createElement('button');
     completeBtn.classList.add('complete-btn');
     if (!todo.completed) {
-        completeBtn.setAttribute("class", "notDone")
+        completeBtn.setAttribute("class", "notCompleted")
         completeBtn.innterHTML = "&nbsp;&nbsp;";
     }
-    else {completeBtn.setAttribute("class", "done")
+    else {completeBtn.setAttribute("class", "completed")
         completeBtn.innerHTML = "&nbsp;&#10004;&nbsp;";
     }
     
