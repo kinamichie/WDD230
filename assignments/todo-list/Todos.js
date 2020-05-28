@@ -86,7 +86,7 @@ function completeTodo(todo) {
 
 }
 //filter function 
-jsonObj.forEach(function (element, index){
+todoList.forEach(function (element, index){
     if (element['completed'] === 'false'){
         console.log('found', element);
     }
