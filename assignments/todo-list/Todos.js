@@ -88,7 +88,7 @@ function renderTodoList(todo) {
     `);
   }
     
-    renderTodoList(todo);
+    renderTodoList(todos);
   
 
 //completed todos function
