@@ -77,8 +77,14 @@ function deleteTodo(e) {
 }
 //complete
 function completeTodo() {
-    document.getElementById("checkbox").innerHTML = "X";
-      
+    if (!todo.done) {
+        completeBtn.setAttribute("class", "notDone")
+        completeBtn.innterHTML = "&nbsp;&nbsp;";
+    }
+    else {completeBtn.setAttribute("class", "done")
+        completeBtn.innerHTML = "&nbsp;&#10004;&nbsp;";
+    }
+
 }
 //function myFunction() {
  //   
