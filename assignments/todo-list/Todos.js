@@ -104,7 +104,7 @@ function renderTodoList(todo) {
 }*/
 //filter functions
 
-function filterTodoElements(todo){
+function filterTodo(todo){
 
     const todoFiltersDiv = document.createElement('div');
     todoFiltersDiv.classList.add('todoFilters');
