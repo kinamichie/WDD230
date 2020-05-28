@@ -73,21 +73,18 @@ function deleteTodo(e) {
     document.querySelector('#todos').innerHTML = '';
     loadTodos();
 }
-//complete
+//render list
+
+
+//completed todos function
 function completeTodo(todo) {
-    this.completed = false;
-    if (!todo.completed) {
-        completeBtn.setAttribute("class", "notDone")
+        if (!todo.completed) {
+        completeBtn.setAttribute('data-completed', todo.notCompleted)
         completeBtn.innterHTML = "&nbsp;&nbsp;";
     }
-    else {completeBtn.setAttribute("class", "done")
+    else {completeBtn.setAttribute('data-completed', todo.completed)
         completeBtn.innerHTML = "&nbsp;&#10004;&nbsp;";
     }
 
 }
 //filter function 
-toDoList.forEach(function (element, index){
-    if (element['completed'] === 'false'){
-        console.log('found', element);
-    }
-})
