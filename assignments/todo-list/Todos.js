@@ -39,7 +39,7 @@ function createTodoElement(todo) {
     //complete button
     const completeBtn = document.createElement('button');
     completeBtn.classList.add('complete-btn');      
-    todoContent.onclick = completeTodo;
+    //todoContent.onclick = completeTodo;
 
     //todo content
     const todoContent = document.createElement('div');
@@ -92,7 +92,7 @@ function renderTodoList(todo) {
   
 
 //completed todos function
-function completeTodo(todo) {
+/*function completeTodo(todo) {
         if (!todo.completed) {
         completeBtn.setAttribute('data-completed', todo.notCompleted)
         completeBtn.innterHTML = "&nbsp;&nbsp;";
@@ -101,7 +101,7 @@ function completeTodo(todo) {
         completeBtn.innerHTML = "&nbsp;&#10004;&nbsp;";
     }
 
-}
+}*/
 //filter functions
 
 function filterTodoElements(todo){
