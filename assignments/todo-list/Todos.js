@@ -38,12 +38,12 @@ function createTodoElement(todo) {
 
     //complete button
     const completeBtn = document.createElement('button');
-    completeBtn.classList.add('complete-btn');
+    //completeBtn.classList.add('complete-btn');
     if (!todo.completed) {
-        completeBtn.setAttribute("class", "notCompleted")
+        completeBtn.setAttribute('class', 'notCompleted');
         completeBtn.innterHTML = "&nbsp;&nbsp;";
     }
-    else {completeBtn.setAttribute("class", "completed")
+    else {completeBtn.setAttribute('class', 'completed');
         completeBtn.innerHTML = "&nbsp;&#10004;&nbsp;";
     }
     
