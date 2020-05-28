@@ -75,7 +75,7 @@ function deleteTodo(e) {
 }
 //render list
 
-function renderTodo(todo) {
+function renderTodoList(todo) {
     const list = document.querySelector('todoList');
     list.insertAdjacentHTML('beforeend', `
       <div class="todos" data-key="${todo.id}">
@@ -87,17 +87,9 @@ function renderTodo(todo) {
       </li>
     `);
   }
+    
+    renderTodoList(todo);
   
-  function addTodo(content) {
-    const todos = {
-      content: inputValue,
-      completed: false,
-      id: Date.now(),
-    };
-  
-    todoItems.push(todo);
-    renderTodo(todo);
-  }
 
 //completed todos function
 function completeTodo(todo) {
@@ -112,3 +104,37 @@ function completeTodo(todo) {
 }
 //filter functions
 
+function filterTodoElements(todo){
+
+    const todoFiltersDiv = document.createElement('div');
+    todoFiltersDiv.classList.add('todoFilters');
+
+    //tasks left
+    const tasksLeft = document.createElement('div');
+    tasksLeft.classList.add('tasks-left');    
+    
+    //show all todos
+    const showAllBtn = document.createElement('button');
+    showAllBtn.setAttribute('data-content', todo.content);
+    showAllBtn.classList.add('showAllTodos');
+    showAllBtn.onclick = showAllTodos;    
+
+    //active button
+    const activeBtn = document.createElement('button');
+    activeBtn.setAttribute('data-notCompleted', todo.completed);
+    activeBtn.classList.add('active-btn');
+    activeBtn.onclick = activeTodos;
+
+    //completed button
+    const doneBtn = document.createElement('button');
+    doneBtn.setAttribute('data-done', todo.completed);
+    doneBtn.classList.add('done-btn');
+    doneBtn.onclick = doneTodos;
+
+    todoFiltersDiv.appendChild(tasksLeft);
+    todoFiltersDiv.appendChild(showAllBtn);
+    todoFiltersDiv.appendChild(activeBtn);
+    todoFiltersDiv.appendChild(doneBtn);
+
+    return todoFiltersDiv;
+}
