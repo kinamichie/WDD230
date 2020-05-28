@@ -86,7 +86,7 @@ function completeTodo(todo) {
 
 }
 //filter function 
-todoList.forEach(function (element, index){
+toDoList.forEach(function (element, index){
     if (element['completed'] === 'false'){
         console.log('found', element);
     }
