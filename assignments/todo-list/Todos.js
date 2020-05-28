@@ -76,7 +76,7 @@ function deleteTodo(e) {
     loadTodos();
 }
 //complete
-function completeTodo() {
+function completeTodo(todo) {
     if (!todo.done) {
         completeBtn.setAttribute("class", "notDone")
         completeBtn.innterHTML = "&nbsp;&nbsp;";
