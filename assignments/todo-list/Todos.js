@@ -41,7 +41,7 @@ function createTodoElement(todo) {
     completeBtn.setAttribute('type', 'checkbox');
     completeBtn.classList.add('complete-btn');
     document.body.appendChild(completeBtn);
-    //completeBtn.onclick = completeTodo;
+    completeBtn.onclick = completeTodo;
   
     //todo content
     const todoContent = document.createElement('div');
@@ -76,11 +76,11 @@ function deleteTodo(e) {
     loadTodos();
 }
 //complete
-/*function completeTodo() {
+function completeTodo() {
     const checkbox = document.getElementById('data-completed');
     if(checkbox.checked == true){
         style.display = "block";
     }else {
         style.display = "none";
     }
-}*/
+}
