@@ -77,13 +77,9 @@ function deleteTodo(e) {
 }
 //complete
 function completeTodo() {
-    const checkbox = document.getElementById('checkbox');
-    if(checkbox.checked === true){
-        style.display = "block";
-    }else {
-        style.display = "none";
-    }
+    document.getElementById("checkbox").innerHTML = "X";
+      
 }
 //function myFunction() {
- //   document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+ //   
  // }
