@@ -75,20 +75,7 @@ function deleteTodo(e) {
 }
 //render list
 
-function renderTodoList(todo) {
-    const list = document.querySelector('todoList');
-    list.insertAdjacentHTML('beforeend', `
-      <div class="todos" data-key="${todo.id}">
-        <button id="${todo.id}" type="checkbox" class="complete-btn"></button>
-        <label for="${todo.id}" class="tick js-tick"></label>
-        <div>${todo.text}</div>
-        <button class="todo-delete-button delete-todo">
-         </button>
-      </li>
-    `);
-  }
-    
-    renderTodoList(todos);
+
   
 
 //completed todos function
@@ -104,10 +91,10 @@ function renderTodoList(todo) {
 }*/
 //filter functions
 
-function filterTodo(todo){
+function createTodoFilter(todo){
 
     const todoFiltersDiv = document.createElement('div');
-    todoFiltersDiv.classList.add('todoFilters');
+    todoFiltersDiv.classList.add('todo-filters');
 
     //tasks left
     const tasksLeft = document.createElement('div');
