@@ -78,7 +78,7 @@ function deleteTodo(e) {
 }
 function check(){ 
     var text = document.getElementById('check');
-    if (checkBox.checked == true){
+    if (completed.checked == true){
         text.style.display="line-through";
     } else {
         text.style.display="none";
