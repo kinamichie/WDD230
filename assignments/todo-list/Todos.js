@@ -1,8 +1,11 @@
 //import helper functions
 import utilities from './utilities.js';
 import ls from './ls.js';
-
+//check load local storage 
+loadTodos();
+//add button
 document.querySelector('#addBtn').onclick = newTodo;
+
 
 function loadTodos(){
     const todoList = ls.getTodoList();
@@ -21,7 +24,7 @@ function newTodo() {
     const todoDiv = createTodoElement(todo);
     addToList(todoDiv);
     ls.saveTodo(todo);
-}  
+   }  
 
 //create Todo()
 function createTodo(){
@@ -39,9 +42,11 @@ function createTodoElement(todo) {
     //complete button
     const completeBtn = document.createElement('button');
     completeBtn.setAttribute('type', 'checkbox');
-    completeBtn.setAttribute('check', todo.completed);
+    completeBtn.setAttribute('id', 'checkbox');
+    completeBtn.setAttribute('data-id', todo.id);
     completeBtn.classList.add('complete-btn'); 
-    completeBtn.onclick = check();  
+    completeBtn.onclick = checkTodo;
+     
     
 
     //todo content
@@ -76,20 +81,30 @@ function deleteTodo(e) {
     document.querySelector('#todos').innerHTML = '';
     loadTodos();
 }
-function check(){ 
-    var text = document.getElementById('check');
-    if (todo.completed == true){
-        text.style.display="line-through";
-    } else {
-        text.style.display="none";
-    }
-}   
 
+function checkTodo(e){
+    var btn = e.currentTarget; 
+    var targetTodolist = ls.getTodo(btn.getAttribute('data-id'));
+    targetTodolist.completed = !targetTodolist.completed;
+    if(targetTodolist.completed){
+        btn.innerText = "X";
+    }else{
+        btn.innerText = null;
+    }
+    ls.setCompleted(targetTodolist, targetTodolist.completed); 
+}
+
+document.querySelector('#allBtn').onclick = ls.getTodoList;
+
+if (ls.completed === false){
+document.querySelector('#activeBtn').onclick = ls.getToList.completed;
+} else {
+    document.querySelector('#completedBtn').onclick = ls.completed;
+}
 
  
 //filter functions
-
-function createTodoFilter(todo){
+/*function loadTodosFilters(){
 
     const todoFiltersDiv = document.createElement('div');
     todoFiltersDiv.classList.add('todo-filters');
@@ -110,14 +125,12 @@ function createTodoFilter(todo){
     activeBtn.setAttribute('data-notCompleted', todo.completed);
     activeBtn.classList.add('active-btn');
     activeBtn.innerText = "Active";
-    activeBtn.onclick = activeTodos;
 
     //completed button
     const doneBtn = document.createElement('button');
     doneBtn.setAttribute('data-done', todo.completed);
     doneBtn.classList.add('done-btn');
     doneBtn.innerText = "Completed";
-    doneBtn.onclick = doneTodos;
 
     todoFiltersDiv.appendChild(tasksLeft);
     todoFiltersDiv.appendChild(showAllBtn);
@@ -127,17 +140,26 @@ function createTodoFilter(todo){
     return todoFiltersDiv;
 }
 
-function showAllTodos(){
-    var allList  = [];
-    for (var i = 0; i< todoList.length; i++){
+var allList = document.getElementsByTagName("allList")[0];
+todoFiltersDiv.appendChild(button);
+button.addEventListener('click', function() {
+for (var i = 0; i< todoList.length; i++){
         allList.push(todo[i]);
-    }
 }
+});
 
-function activeTodos() {
+
+
+/*function showAllTodos(){
+    var allList  = [];
+    
+    }console.log(allList);
+}*/
+
+/*function activeTodos() {
     var activeList = [];
     for (var i = 0; i< todoList.length; i++){
-        if (todo[i].complete === 'false'){
+        if (todo[i].completed === 'false'){
             activeList.push(todo[i]);
         }
     }    
@@ -146,8 +168,9 @@ function activeTodos() {
 function doneTodos() {
     var doneList = [];
     for (var i = 0; i< todoList.length; i++){
-        if (todo[i].complete !== 'false'){
+        if (todo[i].completed !== 'false'){
             doneList.push(todo[i]);
         }
     }
-}
+}*/
+
