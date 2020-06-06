@@ -1,7 +1,7 @@
 //
 
 export default  {
-    renderShowAllTodos(todoList, listElement) {
+    /*renderShowAllTodos(todoList, listElement) {
         let list = document.querySelector('todoList');
         let currentInnerHTML = element.innerHTML;
 
@@ -25,7 +25,7 @@ export default  {
           currentInnerHTML =+ displayedTodo;
           element.innerHTML = currentInnerHTML;
       }        
-}
+}*/
 }
 
    

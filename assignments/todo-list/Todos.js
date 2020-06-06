@@ -92,7 +92,12 @@ function checkTodo(e){
         btn.innerText = null;
     }
     ls.setCompleted(targetTodolist, targetTodolist.completed); 
+
 }
+
+/*document.getElementById("checkbox").addEventListener("click", function(){
+    document.getElementById("checkbox").innerHTML = "X";
+  });*/
 
 document.querySelector('#allBtn').onclick = ls.getTodoList;
 

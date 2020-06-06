@@ -1,0 +1,72 @@
+<!--This web page is the notes I have taken from the reading in week 7. It comes from Chapter 11, 13 in JavaScript Novice to Ninja-->
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Notes for week 7</title>
+        <meta name="description" content="Notes for week seven by Kina Michie WDD 330">
+    </head>
+    <body>
+    <header>
+        <h1>Notes For Week 7</h1>
+    </header>
+    <body>
+        <ul><h2>Chapter 11</h2>
+            <li>call() method can be used to set the value of this inside a function to an object that is provided as the frst argument</li>
+            <li>apply() method can works in the same way as the call() method except the arguments of the funciton are provided as an array, even if there is only one argument.</li>
+            <li>A description property can be added to describe what a function does</li>
+            <li>A cache can save the result and return the item later</li>
+            <li>IFFE = Immediately Invoked Function Expression</li>
+            <li>Temporary Variables should be put inside IFFE</li>
+            <li>It is best to put the 'use strict' mode inside a function</li>
+            <li>Self contained code blocks can use the same variable name and not interfere with the code</li>
+            <li>A function can be defined and called as a variable</li>
+            <li>Init-time branching is to create a function that can rewrite itself</li>
+            <li>Recursive function is one that invokes itself until a certain condition is met</li>
+            <li>Callbacks can be used to facilitate event-driven asynchronous programming</li>
+            <li>Callback Hell is a term used to refer to a tangled mess of code when more than one callback is used in the same function</li>
+            <li>A promice represents the future result of an asynchronous operation</li>
+            <li>When a promise is created, it calls an asynchronous operation and is then said to be pending and remains in this state while the operation is taking place</li>
+            <li>Resolved - the asynchronous operation was completed successfully</li>
+            <li>Rejected - the asynchronous operation didn't work as expected, wasn't successfully completed or resulted in an error</li>
+            <li>Multiple promises can be chained together</li>
+            <li>Async Functions allow you to write asynchronous code as if it was synchronous</li>
+            <li>Generalized functions</li>
+            <li>Functions can return functions</li>
+            <li>A closure is a reference to a variable that was created inside the scope of another function, but is then kept alive and used in another part of the program</li>
+            <li>Closures not only have access to variables declared in a parent function's scope, they can aslo change the value of these variables</li>
+            <li>Generators are special functions used to produce iterators that maintain the state of a value</li>
+            <li>Pure Functions</li>
+            <ul>
+                <li>The return value of a pure function should only depend on the values provided as arguments. It doesn't rely on values from somewhere else in the program</li>
+                <li>There are no side-effects. a pure function doesn't change any values or data elsewhere in the program. It only makes non-destructive data transformations and returns new values, rather than altering any of the underlying data</li>
+                <li>Referential transparency. Given the same arguments, a pure function will always return the same result</li>
+                <li>Any pure function must have:</li>
+                <ul>
+                    <li>At least one argument; otherwise the return value must depend on something other than the arguments of the function, breaking the first rule</li>
+                    <li>A return value; otherwise there's no point in the function (unless it has changed something else in the program - in which case, it's broken the "no side-effects" rule</li>
+                </ul>
+            </ul>
+            <li>High-order functions are functions that accept another function as an argument</li>
+            <li>Currying is a process that involves the partial application of functions</li>
+        </ul>
+        <ul><h2>Chapter 13</h2>
+            <li>Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloading</li>
+            <li>It is unusual for Ajax not to be used when a partial web page update is required</li> 
+            <li>Fetch API is currently a living standard for requesting and sending data asynchronously across a network</li>
+            <li>Response Interface deals with the object that's returned when the promise is fulfilled</li>
+            <li>Response objects are: headers, url, redirected, type</li>
+            <li>redirect() method can be used to redirect to another URL</li>
+            <li>Text responses text() method takes a stream of text from the response, reads it to completion and then returns a promise that resolves to a USVSting objec that can be treated as a string in JavaScript</li>
+            <li>blob() method is used to read a file of raw data, such as an image or a spreadsheet</li>
+            <li>JSON is probably the mose common format for AJAX responses</li>
+            <li>Request objects are created using the Request() constructor and include the following properties: utl, method, headers, mode, cache, credentials, redirect</li>
+            <li>HTTP headers are used to pass on any additional information about a request or response</li>
+            <li>AJAX <a href="ajax/ajax.html">example</a></li>
+            
+        </ul>
+
+
+        </body>
+        </html>

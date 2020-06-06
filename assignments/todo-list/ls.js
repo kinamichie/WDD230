@@ -20,6 +20,11 @@ function getTodoList() {
          
     } return todoList;
 }
+function completedTodo(id){
+    const toDoList = getTodoList();
+    const doneTodos = toDoList.filter(box => box.checked).map(box => box.value);
+    localStorage.setItem('toDoList', JSON.stringify(doneTodos));
+}
 //get completed
 function getTodo(id){
     const toDoList = getTodoList();
@@ -33,6 +38,7 @@ function setCompleted(id, value){
     const updatedTodos = toDoList.filter( todo => todo.id != id)
     toDoList.completed = value;
     localStorage.setItem('toDoList', JSON.stringify(toDoList));
+    return updatedTodos;
 }
 
 //export
