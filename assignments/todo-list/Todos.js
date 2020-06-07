@@ -79,17 +79,19 @@ function deleteTodo(e){
 }
 
 function completedTodo(e){
-    const btn = e.currentTarget;
-    const tTodolist = ls.getTodoList();
+    var butn = e.currentTarget;
+    var tTodolist = ls.getTodoList();
     console.log("tTodoList", tTodolist);
 
     tTodolist.forEach(item => {
+        if(InputEvent.id == butn.getAttribute('com-id')){
         item.completed = !item.completed;
         if(item.completed){
-            btn.innerText = "X";
+            butn.innerText = "X";
         } else {
-            btn.innerText="";
+            butn.innerText="";
         }
+    }
     });
     
 
