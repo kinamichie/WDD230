@@ -8,7 +8,7 @@ function deleteTodo(id){
     const toDoList = getTodoList();
     const updatedTodos=toDoList.filter(todo =>todo.id !=id);
     localStorage.setItem('toDoList',JSON.stringify(updatedTodos));
-
+}
 //completed todo
 function completedTodo(id){
     const toDoList = getTodoList();
@@ -41,3 +41,4 @@ export default {
     setCompleted,
     deleteTodo
 }
+
