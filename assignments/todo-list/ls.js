@@ -34,7 +34,7 @@ function getTodoList(){
     } return todoList;
 }
 
-export default{
+export default {
     saveTodo,
     getTodoList,
     completedTodo,
