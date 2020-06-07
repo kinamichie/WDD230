@@ -94,7 +94,7 @@ function completedTodo(e){
     }
     });
     
-
+    loadTodos(tTodolist);
 }
 
  /*   //filter function
