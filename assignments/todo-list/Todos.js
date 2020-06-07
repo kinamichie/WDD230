@@ -90,7 +90,7 @@ function completedTodo(e){
         } else {
             btn.innerText="";
         }
-    });ls.setCompleted(tTodolist, tTodolist.completed); 
+    });ls.setCompleted("tTodolist", tTodolist); 
 
 }
 
