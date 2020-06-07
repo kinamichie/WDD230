@@ -97,7 +97,7 @@ function completedTodo(e){
     loadTodos(tTodolist);
 }
 
- /*   //filter function
+   //filter function
 
     document.getElementById('allBtn').addEventListener("click", allTodos);
 
@@ -125,7 +125,7 @@ function completedTodo(e){
         
         document.querySelector('#todos').innerHTML = '';
         loadTodos(completedFilter);
-    }*/
+    }
     
     
     

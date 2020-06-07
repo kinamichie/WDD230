@@ -13,19 +13,19 @@ function deleteTodo(id){
 function completedTodo(){
     const toDoList = getTodoList();
     const updatedTodos=toDoList.filter(todo =>todo.id !=id);
-    //const doneTodos = toDoList.filter(box => box.checked).map(box => box.value);
+    const doneTodos = toDoList.filter(box => box.checked).map(box => box.value);
     localStorage.setItem('toDoList', JSON.stringify(toDoList));
 
     console.log("doneTodos", doneTodos);
 }
-/*function setCompleted(id, value){
+function setCompleted(id, value){
     const toDoList = getTodoList();
 
-    //const updatedTodos = toDoList.filter( todo => todo.id != id);
+    const updatedTodos = toDoList.filter( todo => todo.id != id);
     toDoList.completed = value;
     localStorage.setItem('toDoList', JSON.stringify(toDoList));
-    //return updatedTodos;
-}*/
+    return updatedTodos;
+}
 
 //get todoList
 function getTodoList(){
@@ -41,7 +41,7 @@ export default {
     saveTodo,
     getTodoList,
     completedTodo,
-    //setCompleted,
+    setCompleted,
     deleteTodo
 }
 
