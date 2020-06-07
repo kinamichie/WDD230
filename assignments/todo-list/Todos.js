@@ -91,7 +91,7 @@ function completedTodo(e){
             btn.innerText="";
         }
     });
-    loadTodos(tTodolist); 
+    
 
 }
 
