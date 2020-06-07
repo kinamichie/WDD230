@@ -12,7 +12,7 @@ function deleteTodo(id){
 //completed todo
 function completedTodo(){
     const toDoList = getTodoList();
-    //const updatedTodos=toDoList.filter(todo =>todo.id !=id);
+    const updatedTodos=toDoList.filter(todo =>todo.id !=id);
     //const doneTodos = toDoList.filter(box => box.checked).map(box => box.value);
     localStorage.setItem('toDoList', JSON.stringify(toDoList));
 
