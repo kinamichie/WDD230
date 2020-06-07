@@ -20,10 +20,10 @@ function completedTodo(){
 function setCompleted(id, value){
     const toDoList = getTodoList();
 
-    const updatedTodos = toDoList.filter( todo => todo.id != id);
+    //const updatedTodos = toDoList.filter( todo => todo.id != id);
     toDoList.completed = value;
     localStorage.setItem('toDoList', JSON.stringify(toDoList));
-    return updatedTodos;
+    //return updatedTodos;
 }
 
 //get todoList
