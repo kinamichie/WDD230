@@ -1,37 +1,20 @@
-function saveTodo(todo) {
+function saveTodo(todo){
     const toDoList = getTodoList();
     toDoList.push(todo);
-    localStorage.setItem('toDoList', JSON.stringify(toDoList));
+    localStorage.setItem('toDoList',JSON.stringify(toDoList));
 }
 //delete id list
-function deleteTodo(id) {
+function deleteTodo(id){
     const toDoList = getTodoList();
+    const updatedTodos=toDoList.filter(todo =>todo.id !=id);
+    localStorage.setItem('toDoList',JSON.stringify(updatedTodos));
 
-    const updatedTodos = toDoList.filter( todo => todo.id != id)
-    localStorage.setItem('toDoList', JSON.stringify(updatedTodos));
-}
-//get todoList
-function getTodoList() {
-    const todoListString = localStorage.getItem('toDoList');
-    let todoList = [];
-
-    if (todoListString){
-    todoList = JSON.parse(todoListString);
-         
-    } return todoList;
-}
+//completed todo
 function completedTodo(id){
     const toDoList = getTodoList();
     const doneTodos = toDoList.filter(box => box.checked).map(box => box.value);
     localStorage.setItem('toDoList', JSON.stringify(doneTodos));
 }
-//get completed
-function getTodo(id){
-    const toDoList = getTodoList();
-    const targetTodoList = toDoList.filter( todo => todo.id != id);
-    return targetTodoList;
-}
-
 function setCompleted(id, value){
     const toDoList = getTodoList();
 
@@ -41,11 +24,20 @@ function setCompleted(id, value){
     return updatedTodos;
 }
 
-//export
-export default {
+//get todoList
+function getTodoList(){
+    const todoListString=localStorage.getItem('toDoList');
+    let todoList = [];
+
+    if(todoListString){
+        todoList = JSON.parse(todoListString);
+    } return todoList;
+}
+
+export default{
     saveTodo,
     getTodoList,
-    deleteTodo,
+    completedTodo,
     setCompleted,
-    getTodo
+    deleteTodo
 }

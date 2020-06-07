@@ -4,7 +4,7 @@ import ls from './ls.js';
 //check load local storage 
 
 
-loadTodos();
+//loadTodos();
 //add button
 document.querySelector('#addBtn').onclick = newTodo;
 
@@ -96,14 +96,15 @@ function completedTodo(ev){
             if(item.completed){
                 butn.innerText = "X";
                 document.getElementById('content').style.textDecoration='line-through';
+                
             }else {
                 butn.innerText= "";
                 document.getElementById('content').style.textDecoration='none';
+                
             }                
         }
     });    
-    //document.querySelector('#todos').innerHTML = '';
-    //loadTodos();
+    
             
     }
     
@@ -123,6 +124,7 @@ function activeTodos(){
     var activeFilter = todoList.filter( element => element.completed == false);
     
     console.log(activeFilter);
+    return this.activeTodos;
 }
 
 document.getElementById('completedBtn').addEventListener('click', comTodos);
