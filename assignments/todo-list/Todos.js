@@ -84,7 +84,7 @@ function completedTodo(e){
     console.log("tTodoList", tTodolist);
 
     tTodolist.forEach(item => {
-        if(InputEvent.id == butn.getAttribute('com-id')){
+        if(item.id == butn.getAttribute('com-id')){
         item.completed = !item.completed;
         if(item.completed){
             butn.innerText = "X";
