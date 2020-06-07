@@ -90,5 +90,35 @@ function completedTodo(e){
         } else {
             btn.innerText="";
         }
-    });
+    });ls.setCompleted(tTodolist, tTodolist.completed); 
+
 }
+
+    //filter function
+
+    document.getElementById('allBtn').addEventListener("click", allTodos);
+
+    function allTodos() {
+        document.querySelector('#todos').innerHTML = '';
+        loadTodos();
+    }
+    
+    document.getElementById('activeBtn').addEventListener('click', activeTodos);
+    function activeTodos(){
+        var todoList = ls.getTodoList();
+        var activeFilter = todoList.filter( element => element.completed == false);
+        
+        console.log(activeFilter);
+        return this.activeTodos;
+    }
+    
+    document.getElementById('completedBtn').addEventListener('click', comTodos);
+    function comTodos() {
+        var todoList = ls.getTodoList();
+        var completedFilter = todoList.filter( element => element.completed == true);
+        
+        console.log(completedFilter);
+    }
+    
+    
+    
