@@ -94,7 +94,7 @@ function completedTodo(e){
     }
     });
     
-    ls.setCompleted('tTodolist', tTodolist.completed); 
+    ls.setCompleted('tTodolist', tTodolist); 
 }
 
    //filter function
