@@ -5,6 +5,7 @@ import ls from './ls.js';
 
 //add button
 document.querySelector('#addBtn').onclick = newTodo;
+loadTodos();
 
 //load todos
 function loadTodos(){

@@ -13,8 +13,8 @@ function deleteTodo(id){
    /* const toDoList = getTodoList();
     //const doneTodos = toDoList.filter(box => box.checked).map(box => box.value);
     const doneTodos = toDoList.filter(box => box.checked)
-    localStorage.setItem('toDoList', JSON.stringify(doneTodos));*/
-}
+    localStorage.setItem('toDoList', JSON.stringify(doneTodos));
+}*/
 function setCompleted(id, value){
     const toDoList = getTodoList();
 
