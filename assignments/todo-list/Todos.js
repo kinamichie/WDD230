@@ -90,7 +90,8 @@ function completedTodo(e){
         } else {
             btn.innerText="";
         }
-    });ls.setCompleted("tTodolist", tTodolist); 
+    });
+    ls.setCompleted("tTodolist", tTodolist); 
 
 }
 
@@ -109,7 +110,8 @@ function completedTodo(e){
         var activeFilter = todoList.filter( element => element.completed == false);
         
         console.log(activeFilter);
-        return this.activeTodos;
+        document.querySelector('#todos').innerHTML = '';
+        loadTodos(activeFilter);
     }
     
     document.getElementById('completedBtn').addEventListener('click', comTodos);
@@ -118,7 +120,9 @@ function completedTodo(e){
         var completedFilter = todoList.filter( element => element.completed == true);
         
         console.log(completedFilter);
-        return this.comTodos;
+        
+        document.querySelector('#todos').innerHTML = '';
+        loadTodos(completedFilter);
     }
     
     
