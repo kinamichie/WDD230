@@ -14,7 +14,8 @@ function completedTodo(){
     const toDoList = getTodoList();
     const updatedTodos=toDoList.filter(todo =>todo.id !=id);
     //const doneTodos = toDoList.filter(box => box.checked).map(box => box.value);
-    localStorage.setItem('toDoList', JSON.stringify(toDoList));
+    localStorage.setItem('toDoList', JSON.stringify(updatedToDos));
+    
 
     console.log("doneTodos", doneTodos);
 }
@@ -23,7 +24,7 @@ function setCompleted(id, value){
 
     const updatedTodos = toDoList.filter( todo => todo.id != id);
     toDoList.completed = value;
-    localStorage.setItem('toDoList', JSON.stringify(toDoList));
+    localStorage.setItem('toDoList', JSON.stringify(updatedtoDos));
     
 }
 

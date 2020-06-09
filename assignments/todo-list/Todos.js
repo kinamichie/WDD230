@@ -99,13 +99,20 @@ function completedTodo(e){
 
    //filter function
 
-    document.getElementById('allBtn').addEventListener("click", allTodos);
+    /*function displayTodos(filteredTodos){
+        
+        document.querySelector('#todos').innerHTML = '';
+        if (ls.getTodoList){
+            itemCompleted=0;
+        }
+        document.getElementById('allBtn').addEventListener("click", allTodos);
 
     function allTodos() {
-        document.querySelector('#todos').innerHTML = '';
+        
         loadTodos();
-    }
+    }*/
     
+
     document.getElementById('activeBtn').addEventListener('click', activeTodos);
     function activeTodos(){
         var todoList = ls.getTodoList();
@@ -113,7 +120,7 @@ function completedTodo(e){
         
         console.log(activeFilter);
         document.querySelector('#todos').innerHTML = '';
-        loadTodos(activeFilter);
+        loadTodos();
     }
     
     document.getElementById('completedBtn').addEventListener('click', comTodos);
@@ -124,7 +131,7 @@ function completedTodo(e){
         console.log(completedFilter);
         
         document.querySelector('#todos').innerHTML = '';
-        loadTodos(completedFilter);
+        loadTodos();
     }
     
     
