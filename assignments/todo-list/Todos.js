@@ -95,22 +95,17 @@ function completedTodo(e){
     });
     
     ls.setCompleted('tTodolist', tTodolist); 
+    
 }
 
    //filter function
 
-    /*function displayTodos(filteredTodos){
-        
-        document.querySelector('#todos').innerHTML = '';
-        if (ls.getTodoList){
-            itemCompleted=0;
-        }
-        document.getElementById('allBtn').addEventListener("click", allTodos);
+   document.getElementById('allBtn').addEventListener("click", allTodos);
 
     function allTodos() {
-        
+        document.querySelector('#todos').innerHTML = '';
         loadTodos();
-    }*/
+    }
     
 
     document.getElementById('activeBtn').addEventListener('click', activeTodos);
