@@ -22,7 +22,7 @@ function completedTodo(){
 function setCompleted(id, value){
     const toDoList = getTodoList();
 
-    const updatedTodos = toDoList.filter( todo => todo.id != id);
+    const updatedTodos = toDoList.filter( todo => todo.id == completed.value);
     toDoList.completed = value;
     localStorage.setItem('toDoList', JSON.stringify(updatedTodos));
     

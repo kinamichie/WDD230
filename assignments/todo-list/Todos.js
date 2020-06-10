@@ -116,7 +116,7 @@ function completedTodo(e){
         console.log(activeFilter);
         
     
-        document.querySelector('#todos').innerHTML = activeFilter;
+        document.querySelector('#todos').innerHTML = '';
         
         //loadTodos();
     }
