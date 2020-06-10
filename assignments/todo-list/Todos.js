@@ -126,7 +126,7 @@ function completedTodo(e){
         
         console.log(completedFilter);
        
-        //document.querySelector('#todos').innerHTML = '';
+        document.querySelector('#todos').innerHTML = completedFilter;
         //loadTodos();
     }
     
