@@ -21,9 +21,9 @@ function completedTodo(){
 }
 function setCompleted(id, value){
     const toDoList = getTodoList();
-
-    const updatedTodos = toDoList.filter( todo => todo.id == completed.value);
     toDoList.completed = value;
+    const updatedTodos = toDoList.filter( todo => todo.id == todo.completed);
+    
     localStorage.setItem('toDoList', JSON.stringify(updatedTodos));
     
 }
