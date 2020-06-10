@@ -13,8 +13,7 @@ function deleteTodo(id){
 function completedTodo(){
     const toDoList = getTodoList();
     const updatedTodos=toDoList.filter(element => element.completed == value);
-    localStorage.setItem('toDoList', JSON.stringify(updatedTodos));  
-   
+    localStorage.setItem('toDoList', JSON.stringify(updatedTodos))
 }
 function setCompleted(id, value){
     const toDoList = getTodoList();

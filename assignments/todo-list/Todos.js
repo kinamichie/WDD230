@@ -88,14 +88,14 @@ function completedTodo(e){
         item.completed = !item.completed;
         if(item.completed){
             butn.innerText = "X";
+            document.getElementById("content").style.textDecoration = "line-through";
         } else {
             butn.innerText="";
         }
     }
     });
-    
-    ls.setCompleted('tTodolist', tTodolist); 
-    
+    tTodolist = new tTodolist;
+    ls.setCompleted('tTodolist', tTodolist);        
     
 }
 
