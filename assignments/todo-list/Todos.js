@@ -114,8 +114,8 @@ function completedTodo(e){
         var activeFilter = todoList.filter( element => element.completed == false);
         
         console.log(activeFilter);
-        document.querySelector('#todos').innerHTML = 'activeFilter';
-        loadTodos();
+        document.querySelector('#todos').innerHTML = '';
+        loadTodos(activeFilter);
     }
     
     document.getElementById('completedBtn').addEventListener('click', comTodos);
