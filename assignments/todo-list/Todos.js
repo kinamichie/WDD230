@@ -95,6 +95,8 @@ function completedTodo(e){
     });
     
     ls.setCompleted('tTodolist', tTodolist); 
+    document.querySelector('#todos').innerHTML = '';
+    loadTodos();
     
 }
 
