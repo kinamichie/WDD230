@@ -44,5 +44,10 @@ function drawGradient() {
      context.stroke(); 
     }
 
-
+function saveDrawing() { 
+    var canvas5 = document.getElementById("demo5"); 
+    window.open(canvas5.toDataURL("image/png")); 
+    var button = document.getElementById("saveButton");
+     button.addEventListener("click", saveDrawing, false);
+    }
 
