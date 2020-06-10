@@ -125,7 +125,7 @@ function completedTodo(e){
         var completedFilter = todoList.filter( element => element.completed == true);
         
         console.log(completedFilter);
-       alert(`${completedFilter}`);
+        view.completedFilter;
         //document.querySelector('#todos').innerHTML = '';
         //loadTodos();
     }
