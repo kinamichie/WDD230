@@ -117,7 +117,7 @@ function completedTodo(e){
         
     
         document.querySelector('#todos').innerHTML = activeFilter;
-        document.getElementById('leftBtn').innerHTML= activeFilter + "tasks left";
+        
         //loadTodos();
     }
     
