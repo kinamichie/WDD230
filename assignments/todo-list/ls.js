@@ -10,9 +10,9 @@ function deleteTodo(id){
     localStorage.setItem('toDoList',JSON.stringify(updatedTodos));
 }
 //completed todo
-function completedTodo(){
+function completedTodo(value){
     const toDoList = getTodoList();
-    //toDoList.completed = value;
+    toDoList.completed = value;
     //const updatedTodos=toDoList.filter(todo => todo.id == id);
     localStorage.setItem('toDoList', JSON.stringify(toDoList));
 }
