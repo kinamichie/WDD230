@@ -116,10 +116,12 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
        if(todoList.filter( element => element.completed === false)) {
            let activeFilter = document.getElementById('activeBtn');
            activeFilter.onclick=function(){ls.getTodoList(activeFilter)};
+           console.log(activeFilter);
        }
        if(todoList.filter(element => element.completed === true )){
            let completedFilter = document.getElementById('completedBtn');
            completedFilter.onclick=function(){ls.getTodoList(completedFilter)};
+           console.log(completedFilter);
        }
     }
 
@@ -131,8 +133,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var todoList = ls.getTodoList();
         var activeFilter = 
         
-        console.log(activeFilter);
-        
+        console.log(activeFilter);        
     
         document.querySelector('#todos').innerHTML = '';
         
