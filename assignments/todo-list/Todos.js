@@ -94,14 +94,13 @@ function completedTodo(e){
         }
     }
     });
-    ls.completedTodo(butn.getAttribute('data-id'));
-    document.querySelector('#todos').innerHTML = '';
-    loadTodos();
+    ls.completedTodo('tTodolist', tTodolist);        
+    
 }
 
    //filter function
 
-   /*document.getElementById('allBtn').addEventListener("click", allTodos);
+   document.getElementById('allBtn').addEventListener("click", allTodos);
 
     function allTodos() {
         document.querySelector('#todos').innerHTML = '';
@@ -132,6 +131,6 @@ function completedTodo(e){
         document.querySelector('#todos').innerHTML = completedFilter;
         //loadTodos();
     }
-    */
+    
     
     
