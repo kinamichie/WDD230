@@ -95,7 +95,7 @@ function completedTodo(e){
         }
     }
     });
-        localStorage.setItem('todos', JSON.stringify(tTodoList));
+        //localStorage.setItem('todos', JSON.stringify(tTodoList));
         document.querySelector('#todos').innerHTML = '';
         loadTodos();      
     
@@ -149,7 +149,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         console.log(completedFilter);
        
         document.querySelector('#todos').innerHTML = '';
-        loadTodos(completedFilter);
+        loadTodos();
     }
     
     
