@@ -18,7 +18,6 @@ function completedTodo(id){
     localStorage.setItem('toDoList', JSON.stringify(updatedTodos));
 }
 
-
 //get todoList
 function getTodoList(){
     const todoListString=localStorage.getItem('toDoList');
