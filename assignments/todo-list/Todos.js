@@ -95,16 +95,13 @@ function completedTodo(e){
         }
     }
     });
-
-        //ls.completedTodo('tTodolist', tTodolist); 
-        //localStorage.removeItem("toDoList");
-        //localStorage.setItem('toDoList', JSON.stringify(tToDoList));
+        
         document.querySelector('#todos').innerHTML = 'X';
         loadTodos(tTodolist);      
     
 }
 //All button
-document.getElementById('allBtn').addEventListener("click", allTodos);
+/*document.getElementById('allBtn').addEventListener("click", allTodos);
 
     function allTodos() {
         document.querySelector('#todos').innerHTML = '';
@@ -121,33 +118,39 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
            completedFilter.onclick=function(){ls.getTodoList(completedFilter)};
            console.log(completedFilter);
        }
-    }
+    }*/
 
   
     
-/*
+document.getElementById('allBtn').addEventListener("click", allTodos);
+
+    function allTodos() {
+        document.querySelector('#todos').innerHTML = '';
+        loadTodos();
+    }
+
     document.getElementById('activeBtn').addEventListener('click', activeTodos);
     function activeTodos(){
         var todoList = ls.getTodoList();
-        var activeFilter = 
+        var activeFilter = todoList.filter( element => element.completed === false);
         
         console.log(activeFilter);        
     
         document.querySelector('#todos').innerHTML = '';
         
-        //loadTodos();
+        loadTodos(activeFilter);
     }
     
     document.getElementById('completedBtn').addEventListener('click', comTodos);
     function comTodos() {
         var todoList = ls.getTodoList();
-        var completedFilter = todoList.filter( element => element.completed == true);
+        var completedFilter = todoList.filter( element => element.completed === true);
         
         console.log(completedFilter);
        
-        document.querySelector('#todos').innerHTML = completedFilter;
-        //loadTodos();
-    }*/
+        document.querySelector('#todos').innerHTML = '';
+        loadTodos(completedFilter);
+    }
     
     
     
