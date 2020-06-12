@@ -95,14 +95,11 @@ function completedTodo(e){
         }
     }
     });
-        if(butn.innerText == "X"){
-            document.getElementById("content").style.textDecoration = "line-through";
-          
-        }
-        else {
-           
-        }   
-        ls.completedTodo('tTodolist', tTodolist);        
+
+        //ls.completedTodo('tTodolist', tTodolist); 
+        toDoList = tTodolist;
+        localStorage.removeItem("toDoList");
+        localStorage.setItem('toDoList', JSON.stringify(toDoList));       
     
 }
 //All button
