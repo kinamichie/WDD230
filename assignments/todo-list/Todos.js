@@ -95,9 +95,9 @@ function completedTodo(e){
         }
     }
     });
-        
-        document.querySelector('#todos').innerHTML = 'X';
-        loadTodos(tTodolist);      
+        localStorage.setItem('todos', JSON.stringify(tTodoList));
+        document.querySelector('#todos').innerHTML = '';
+        loadTodos();      
     
 }
 //All button
