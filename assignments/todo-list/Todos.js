@@ -88,30 +88,50 @@ function completedTodo(e){
         item.completed = !item.completed;
         if(item.completed){
             butn.innerText = "X";
-            document.getElementById("content").style.textDecoration = "line-through";
+            //document.getElementById("content").style.textDecoration = "line-through";
+
         } else {
             butn.innerText="";
         }
     }
     });
-    ls.completedTodo('tTodolist', tTodolist);        
+        if(butn.innerText == "X"){
+            document.getElementById("content").style.textDecoration = "line-through";
+            done++;
+        }
+        else {
+            done--;
+        }
+        leftBtn.innerText= done +"tasks left"
+        todoList = tTodolist;    
+        ls.completedTodo('tTodolist', tTodolist);        
     
 }
-
-   //filter function
-
-   document.getElementById('allBtn').addEventListener("click", allTodos);
+//All button
+document.getElementById('allBtn').addEventListener("click", allTodos);
 
     function allTodos() {
         document.querySelector('#todos').innerHTML = '';
         loadTodos();
+       
+       var todoList = ls.getTodoList();
+       if(todoList.filter( element => element.completed === false)) {
+           let activeFilter = document.getElementById('activeBtn');
+           activeFilter.onclick=function(){getTodoList(todo)};
+       }
+       if(todoList.filter(element => element.completed === true )){
+           let completedFilter = document.getElementById('completedBtn');
+           completedFilter.onclick=function(){getTodoList(todo)};
+       }
     }
-    
 
+  
+    
+/*
     document.getElementById('activeBtn').addEventListener('click', activeTodos);
     function activeTodos(){
         var todoList = ls.getTodoList();
-        var activeFilter = todoList.filter( element => element.completed == false);
+        var activeFilter = 
         
         console.log(activeFilter);
         
@@ -130,7 +150,7 @@ function completedTodo(e){
        
         document.querySelector('#todos').innerHTML = completedFilter;
         //loadTodos();
-    }
+    }*/
     
     
     
