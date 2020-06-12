@@ -115,11 +115,11 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
        var todoList = ls.getTodoList();
        if(todoList.filter( element => element.completed === false)) {
            let activeFilter = document.getElementById('activeBtn');
-           activeFilter.onclick=function(){ls.getTodoList(todo)};
+           activeFilter.onclick=function(){ls.getTodoList()};
        }
        if(todoList.filter(element => element.completed === true )){
            let completedFilter = document.getElementById('completedBtn');
-           completedFilter.onclick=function(){ls.getTodoList(todo)};
+           completedFilter.onclick=function(){ls.getTodoList()};
        }
     }
 
