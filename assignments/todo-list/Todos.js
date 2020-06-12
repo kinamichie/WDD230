@@ -101,9 +101,7 @@ function completedTodo(e){
         }
         else {
            
-        }
-       
-        todoList = tTodolist;    
+        }   
         ls.completedTodo('tTodolist', tTodolist);        
     
 }
