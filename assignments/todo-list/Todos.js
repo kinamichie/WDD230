@@ -98,7 +98,9 @@ function completedTodo(e){
 
         //ls.completedTodo('tTodolist', tTodolist); 
         //localStorage.removeItem("toDoList");
-        localStorage.setItem('toDoList', JSON.stringify(tToDoList));       
+        //localStorage.setItem('toDoList', JSON.stringify(tToDoList));
+        document.querySelector('#todos').innerHTML = '';
+        loadTodos(tTodolist);      
     
 }
 //All button
