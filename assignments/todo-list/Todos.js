@@ -96,7 +96,7 @@ function completedTodo(e){
     }
     });
         //localStorage.setItem('todos', JSON.stringify(tTodoList));
-        ls.completedTodo(btn.getAttribute('data-id'));
+        ls.completedTodo(butn.getAttribute('com-id'));
         
         //loadTodos();
             
