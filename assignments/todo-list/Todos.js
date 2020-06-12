@@ -95,15 +95,14 @@ function completedTodo(e){
         }
     }
     });
-    let done = tTodoList.filter( element => element.completed === false);
         if(butn.innerText == "X"){
             document.getElementById("content").style.textDecoration = "line-through";
-            done++;
+          
         }
         else {
-            done--;
+           
         }
-        leftBtn.innerText= done +"tasks left"
+       
         todoList = tTodolist;    
         ls.completedTodo('tTodolist', tTodolist);        
     
