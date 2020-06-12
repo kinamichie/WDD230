@@ -94,7 +94,7 @@ function completedTodo(e){
         }
     }
     });
-    ls.completedTodo(btn.getAttribute('data-id'));
+    ls.completedTodo(butn.getAttribute('data-id'));
     document.querySelector('#todos').innerHTML = '';
     loadTodos();
 }
