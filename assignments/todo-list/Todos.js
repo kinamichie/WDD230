@@ -96,8 +96,10 @@ function completedTodo(e){
     }
     });
         //localStorage.setItem('todos', JSON.stringify(tTodoList));
+        ls.completedTodo(btn.getAttribute('data-id'));
         document.querySelector('#todos').innerHTML = '';
-        loadTodos();      
+        loadTodos();
+            
     
 }
 //All button
