@@ -95,7 +95,7 @@ function completedTodo(e){
         }
     }
     });
-    let done = todoList.filter( element => element.completed === false);
+    let done = tTodoList.filter( element => element.completed === false);
         if(butn.innerText == "X"){
             document.getElementById("content").style.textDecoration = "line-through";
             done++;
@@ -118,11 +118,11 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
        var todoList = ls.getTodoList();
        if(todoList.filter( element => element.completed === false)) {
            let activeFilter = document.getElementById('activeBtn');
-           activeFilter.onclick=function(){getTodoList(todo)};
+           activeFilter.onclick=function(){ls.getTodoList(todo)};
        }
        if(todoList.filter(element => element.completed === true )){
            let completedFilter = document.getElementById('completedBtn');
-           completedFilter.onclick=function(){getTodoList(todo)};
+           completedFilter.onclick=function(){ls.getTodoList(todo)};
        }
     }
 
