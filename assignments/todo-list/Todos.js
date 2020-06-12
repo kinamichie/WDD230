@@ -95,7 +95,7 @@ function completedTodo(e){
         }
     }
     });
-    let done = item.completed;
+    let done = todoList.filter( element => element.completed === false);
         if(butn.innerText == "X"){
             document.getElementById("content").style.textDecoration = "line-through";
             done++;
