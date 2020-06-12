@@ -10,21 +10,14 @@ function deleteTodo(id){
     localStorage.setItem('toDoList',JSON.stringify(updatedTodos));
 }
 //completed todo
-function completedTodo(value){
+function completedTodo(id){
     const toDoList = getTodoList();
-    toDoList.completed = value;
-    //const updatedTodos=toDoList.filter(todo => todo.id == id);
+    //toDoList.completed = value;
+    const updatedTodos=toDoList.filter(todo => todo.id != id);
     localStorage.removeItem("toDoList");
-    localStorage.setItem('toDoList', JSON.stringify(toDoList));
-}
-/*function setCompleted(id, value){
-    const toDoList = getTodoList();
-
-    const updatedTodos = toDoList.filter( todo => todo.id != id);
-    toDoList.completed = value;
     localStorage.setItem('toDoList', JSON.stringify(updatedTodos));
-    
-}*/
+}
+
 
 //get todoList
 function getTodoList(){
@@ -40,7 +33,6 @@ export default {
     saveTodo,
     getTodoList,
     completedTodo,
-    //setCompleted,
     deleteTodo
 }
 
