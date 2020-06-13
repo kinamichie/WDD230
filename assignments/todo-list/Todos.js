@@ -96,10 +96,6 @@ function completedTodo(e){
     }
     });   
     
-    ls.completedTodo(butn.getAttribute('com-id'));
-    document.querySelector('#todos').innerHTML = '';
-    loadTodos(); 
-
 }
 //All button
 /*document.getElementById('allBtn').addEventListener("click", allTodos);
