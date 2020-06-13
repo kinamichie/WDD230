@@ -94,9 +94,8 @@ function completedTodo(e){
             butn.innerText="";
         }
     }
-    });      
-       
-       loadTodos();         
+    });        
+         
 }
 //All button
 /*document.getElementById('allBtn').addEventListener("click", allTodos);

@@ -14,7 +14,8 @@ function completedTodo(id){
     const toDoList = getTodoList();
     
     localStorage.removeItem("toDoList");
-    localStorage.setItem('toDoList', JSON.stringify(toDoList));
+    const updatedTodos=toDoList.filter(todo =>todo.id ===id);
+    localStorage.setItem('toDoList', JSON.stringify(updatedTodos));
 }
 
 //get todoList
