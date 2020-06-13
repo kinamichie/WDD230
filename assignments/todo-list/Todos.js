@@ -95,9 +95,10 @@ function completedTodo(e){
         }
     }
     });   
-    var tTodolist=ls.getTodoList();
-    const updatedTodos =tTodoList.filter(todo =>todo.id === id);
-    localStorage.setItem('tTodoList', JSON.stringify(updatedTodos)); 
+    
+    ls.completedTodo(butn.getAttribute('com-id'));
+    document.querySelector('#todos').innerHTML = '';
+    loadTodos(); 
 
 }
 //All button
