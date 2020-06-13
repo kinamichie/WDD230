@@ -141,6 +141,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var completedFilter = todoList.filter( element => element.completed === true);
         
         console.log(completedFilter);
+        return this.completedFilter;
        
        
     }
