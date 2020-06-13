@@ -134,7 +134,7 @@ h1:after {
   background-color: #7BDFF2;
   overflow: auto;
 }
-#activeBtn, #allBtn, #completedBtn {
+#leftBtn, #activeBtn, #allBtn, #completedBtn {
   border: none;;
   background-color: #7BDFF2;
   padding: 14px 28px;
