@@ -94,13 +94,9 @@ function completedTodo(e){
             butn.innerText="";
         }
     }
-    });
-        toDoList = tTodolist;
-        //localStorage.setItem('todos', JSON.stringify(tTodoList));
-        localStorage.removeItem("toDoList");
-        localStorage.setItem('toDoList', JSON.stringify(toDoList));
-            
-    
+    });      
+       
+       loadTodos();         
 }
 //All button
 /*document.getElementById('allBtn').addEventListener("click", allTodos);
