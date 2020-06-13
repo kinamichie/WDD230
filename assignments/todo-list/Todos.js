@@ -96,7 +96,7 @@ function completedTodo(e){
     }
     });   
 
-    const updatedTodos =toDoList.filter(todo =>todo.id ===id);
+    const updatedTodos =tToDoList.filter(todo =>todo.id ===id);
     localStorage.setItem('tTodoList', JSON.stringify(updatedTodos)); 
 
 }
