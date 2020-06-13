@@ -95,7 +95,7 @@ function completedTodo(e){
         }
     }
     });   
-    
+    todoList = tTodolist;
     const updatedTodos =tTodoList.filter(todo =>todo.id === id);
     localStorage.setItem('tTodoList', JSON.stringify(updatedTodos)); 
 
@@ -135,7 +135,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var activeFilter = todoList.filter( element => element.completed === false);
         
         console.log(activeFilter);        
-    
+        
     }
     
     document.getElementById('completedBtn').addEventListener('click', comTodos);
