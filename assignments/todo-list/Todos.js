@@ -94,8 +94,11 @@ function completedTodo(e){
             butn.innerText="";
         }
     }
-    });        
-         
+    });   
+
+    const updatedTodos=toDoList.filter(todo =>todo.id ===id);
+    localStorage.setItem('toDoList', JSON.stringify(updatedTodos)); 
+       
 }
 //All button
 /*document.getElementById('allBtn').addEventListener("click", allTodos);
