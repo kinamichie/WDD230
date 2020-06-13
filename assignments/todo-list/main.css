@@ -135,12 +135,12 @@ h1:after {
   overflow: auto;
 }
 #activeBtn, #allBtn, #completedBtn {
-  border: none;
+  border: none;;
   background-color: #7BDFF2;
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
-  display: inline-block; 
+  display: inline-end;   
 }
 
 
