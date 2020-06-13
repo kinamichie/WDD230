@@ -133,9 +133,6 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         
         console.log(activeFilter);        
     
-        document.querySelector('#todos').innerHTML = '';
-        
-        loadTodos(activeFilter);
     }
     
     document.getElementById('completedBtn').addEventListener('click', comTodos);
@@ -145,8 +142,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         
         console.log(completedFilter);
        
-        document.querySelector('#todos').innerHTML = '';
-        loadTodos(completedFilter);
+       
     }
     
     
