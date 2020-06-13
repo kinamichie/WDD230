@@ -80,10 +80,10 @@ function deleteTodo(e){
 
 function completedTodo(e){
     var butn = e.currentTarget;
-    var tTodolist = ls.getTodoList();
-    console.log("tTodoList", tTodolist);
+    var todoList = ls.getTodoList();
+    console.log("todoList", todoList);
 
-    tTodolist.forEach(item => {
+    todoList.forEach(item => {
         if(item.id == butn.getAttribute('com-id')){
         item.completed = !item.completed;
         if(item.completed){
