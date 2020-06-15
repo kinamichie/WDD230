@@ -101,6 +101,9 @@ function completedTodo(e){
 document.getElementById('allBtn').addEventListener("click", allTodos);
 
     function allTodos() {
+        var todoList = ls.getTodoList();
+        var count = todoList.filter(element => element.completed === false).length;
+        document.querySelector('#leftBtn').innerHTML = count + " tasks left";
         document.querySelector('#todos').innerHTML = '';
         loadTodos();
         
@@ -109,10 +112,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
     document.getElementById('activeBtn').addEventListener('click', activeTodos);
     function activeTodos(){
         var todoList = ls.getTodoList();
-        var activeFilter = todoList.filter( element => element.completed === false);
-
-        var count = todoList.filter(element => element.completed === false).length;
-        document.querySelector('#leftBtn').innerHTML = count + " tasks left";
+        var activeFilter = todoList.filter( element => element.completed === false);       
 
         console.log(activeFilter); 
         document.querySelector('#todos').innerHTML=`${activeFilter}`;          
@@ -128,6 +128,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         console.log(completedFilter);  
         document.querySelector('#todos').innerHTML= `${completedFilter}`;        
     }
+
     
 
         
