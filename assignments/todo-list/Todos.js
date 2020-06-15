@@ -104,6 +104,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var todoList = ls.getTodoList();
         var count = todoList.filter(element => element.completed === false).length;
         document.querySelector('#leftBtn').innerHTML = count + " tasks left";
+        
         document.querySelector('#todos').innerHTML = '';
         loadTodos();
         
