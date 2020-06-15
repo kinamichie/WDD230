@@ -103,7 +103,8 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
     function allTodos() {
         document.querySelector('#todos').innerHTML = '';
         loadTodos();
-    }
+        var count = todoList.filter(element => element.completed === true).length;
+        document.querySelector('#leftBtn').innerHTML = count + " tasks left";   }
 
     document.getElementById('activeBtn').addEventListener('click', activeTodos);
     function activeTodos(){
@@ -111,7 +112,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var activeFilter = todoList.filter( element => element.completed === false);
         
         console.log(activeFilter); 
-        document.querySelector('#todos').innerHTML=`${activeFilter}`;          
+        activeFilter.innerHTML="";          
         
     }
     
@@ -120,8 +121,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
 
         var todoList = ls.getTodoList();
         var completedFilter = todoList.filter( element => element.completed === true);
-        var count = todoList.filter(element => element.completed === true).length;
-        document.querySelector('#leftBtn').innerHTML = count + " tasks left";
+       
     
         
         console.log(completedFilter);  
