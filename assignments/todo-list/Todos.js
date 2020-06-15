@@ -88,13 +88,24 @@ function completedTodo(e){
         item.completed = !item.completed;
         if(item.completed){
             butn.innerText = "X";
-            //document.getElementById("content").style.textDecoration = "line-through";
+           
 
         } else {
             butn.innerText="";
         }
     }
-    });   
+    });  
+    var count = 0;
+    for (var f in element.completed) {
+    if (element.completed.hasOwnProperty(f)) {
+     count++; 
+     document.getElementById("content").style.textDecoration = "line-through";
+    }else {
+        count--;
+    }
+    }
+    document.querySelector('#leftBtn').innerHTML = count + " tasks left";
+    
     
 }
   
@@ -112,7 +123,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var activeFilter = todoList.filter( element => element.completed === false);
         
         console.log(activeFilter); 
-        document.querySelector('#todos')=`${activeFilter}`;          
+        document.querySelector('#todos').innerHTML=`${activeFilter}`;          
         
     }
     
