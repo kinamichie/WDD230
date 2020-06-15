@@ -14,6 +14,8 @@ function loadTodos(){
         const el = createTodoElement(todo)
         addToList(el);
     })
+    var count = todoList.filter(element => element.completed === false).length;
+    document.querySelector('#leftBtn').innerHTML = count + " tasks left";
 }
 
 //default export for the module
@@ -95,9 +97,8 @@ function completedTodo(e){
         }
     }
     });  
-    var count = todoList.filter(element => element.completed === false).length;
-    document.querySelector('#leftBtn').innerHTML = count + " tasks left";
 }
+    
     
 document.getElementById('allBtn').addEventListener("click", allTodos);
 
