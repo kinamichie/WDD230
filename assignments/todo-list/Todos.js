@@ -112,17 +112,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var activeFilter = todoList.filter( element => element.completed === false);
         
         console.log(activeFilter); 
-        document.querySelector('#todos')=`${activeFilter}`;  
-
-        var count = 0;
-        for (var f in element.completed) {
-        if (element.completed.hasOwnProperty(f)) {
-         count++;
-        }else {
-            count--;
-        }
-        }
-        document.querySelector('#leftBtn').innerHTML = count + " tasks left";
+        document.querySelector('#todos')=`${activeFilter}`;          
         
     }
     
