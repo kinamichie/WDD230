@@ -110,6 +110,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
 
         //hide the add button
         document.querySelector('#addBtn').hidden=false;
+        document.querySelector('#todoInput').hidden=false;
 
         document.querySelector('#todos').innerHTML = '';
         loadTodos();        
@@ -125,7 +126,8 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         document.querySelector('#todos').innerHTML = activeFilter;  
 
         //hide the add button
-        document.querySelector('#addBtn').hidden=true;    
+        document.querySelector('#addBtn').hidden=true;   
+        document.querySelector('#todoInput').hidden=true;
         
     }
     
@@ -138,8 +140,9 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         console.log(completedFilter);  
         document.querySelector('#todos').innerHTML= `${completedFilter}`; 
         
-        //hide the add button
+        //hide the input bar and the add button
         document.querySelector('#addBtn').hidden=true;
+        document.querySelector('#todoInput').hidden=true;
     }
 
    
