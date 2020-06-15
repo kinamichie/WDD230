@@ -97,26 +97,6 @@ function completedTodo(e){
     });   
     
 }
-//All button
-/*document.getElementById('allBtn').addEventListener("click", allTodos);
-
-    function allTodos() {
-        document.querySelector('#todos').innerHTML = '';
-        loadTodos();
-       
-       var todoList = ls.getTodoList();
-       if(todoList.filter( element => element.completed === false)) {
-           let activeFilter = document.getElementById('activeBtn');
-           activeFilter.onclick=function(){ls.getTodoList(activeFilter)};
-           console.log(activeFilter);
-       }
-       if(todoList.filter(element => element.completed === true )){
-           let completedFilter = document.getElementById('completedBtn');
-           completedFilter.onclick=function(){ls.getTodoList(completedFilter)};
-           console.log(completedFilter);
-       }
-    }*/
-
   
     
 document.getElementById('allBtn').addEventListener("click", allTodos);
@@ -137,12 +117,13 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
     }
     
     document.getElementById('completedBtn').addEventListener('click', comTodos);
-    function comTodos() {
+    function comTodos(e) {
+
         var todoList = ls.getTodoList();
         var completedFilter = todoList.filter( element => element.completed === true);
         
         console.log(completedFilter);  
-        todoList.innerHTML= `${completedFilter}`;        
+        document.querySelector('#todos').innerHTML= `${completedFilter}`;        
     }
     /*var count = 0;
         for (var f in element.completed) {
