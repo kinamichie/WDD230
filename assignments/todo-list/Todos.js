@@ -95,23 +95,8 @@ function completedTodo(e){
         }
     }
     });  
-    var count = 0;
-    if (butn.innerText == "X") {
-        butn.innerText = "";
-        butn.document.getElementById("content").style.textDecoration = "none";
-        count++;        
-    } else {
-        butn.innerText= "X";
-        butn.document.getElementById("content").style.textDecoration = "line-through";
-        count--;
-    }
-    
-    
-    document.querySelector('#leftBtn').innerHTML = count + " tasks left";
-
-    
+   
 }
-  
     
 document.getElementById('allBtn').addEventListener("click", allTodos);
 
@@ -135,20 +120,15 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
 
         var todoList = ls.getTodoList();
         var completedFilter = todoList.filter( element => element.completed === true);
+        var count = todoList.filter(element => element.completed === true).length;
+        document.querySelector('#leftBtn').innerHTML = count + " tasks left";
+    
         
         console.log(completedFilter);  
         document.querySelector('#todos').innerHTML= `${completedFilter}`;        
     }
-    /*function count(){
-        var count = 0;
-        for (var f in element.completed) {
-        if (element.completed.hasOwnProperty(f)) {
-         count++;
-        }else {
-            count--;
-        }
-        }
-        document.querySelector('#leftBtn').innerHTML = count + " tasks left";
-    }*/
+    function count(){
+
+        
     
     
