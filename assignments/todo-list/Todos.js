@@ -96,8 +96,8 @@ function completedTodo(e){
     }
     });  
     var count = 0;
-    for (var f in element.completed) {
-    if (element.completed.hasOwnProperty(f)) {
+    for (var f in item.completed) {
+    if (item.completed.hasOwnProperty(f)) {
      count++; 
      document.getElementById("content").style.textDecoration = "line-through";
     }else {
@@ -105,7 +105,7 @@ function completedTodo(e){
     }
     }
     document.querySelector('#leftBtn').innerHTML = count + " tasks left";
-    
+
     
 }
   
@@ -123,7 +123,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var activeFilter = todoList.filter( element => element.completed === false);
         
         console.log(activeFilter); 
-        document.querySelector('#todos').innerHTML=`${activeFilter}`;          
+        activeFilter.innerHTML=`${activeFilter}`;          
         
     }
     
@@ -136,7 +136,8 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         console.log(completedFilter);  
         document.querySelector('#todos').innerHTML= `${completedFilter}`;        
     }
-    function count(){
+    
+    /*function count(){
         var count = 0;
         for (var f in element.completed) {
         if (element.completed.hasOwnProperty(f)) {
@@ -146,6 +147,6 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         }
         }
         document.querySelector('#leftBtn').innerHTML = count + " tasks left";
-    }
+    }*/
     
     
