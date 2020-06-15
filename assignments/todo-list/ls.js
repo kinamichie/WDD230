@@ -1,7 +1,5 @@
 function saveTodo(todo){
     const toDoList = getTodoList();
-    var count = todoList.filter(element => element.completed === false).length;
-    document.querySelector('#leftBtn').innerHTML = count + " tasks left";
     toDoList.push(todo);
     localStorage.setItem('toDoList',JSON.stringify(toDoList));
 }

@@ -14,8 +14,7 @@ function loadTodos(){
         const el = createTodoElement(todo)
         addToList(el);
     })
-    /*var count = todoList.filter(element => element.completed === false).length;
-    document.querySelector('#leftBtn').innerHTML = count + " tasks left";*/
+    
 }
 
 //default export for the module
@@ -97,6 +96,8 @@ function completedTodo(e){
         }
     }
     });  
+    
+  
 }
     
     
@@ -113,7 +114,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var activeFilter = todoList.filter( element => element.completed === false);       
 
         console.log(activeFilter); 
-        document.querySelector('#todos').innerHTML=`${activeFilter}`;          
+        document.querySelector('#todos').innerHTML=activeFilter;          
         
     }
     
@@ -127,6 +128,8 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         document.querySelector('#todos').innerHTML= `${completedFilter}`;        
     }
 
+    var count = todoList.filter(element => element.completed === false).length;
+    document.querySelector('#leftBtn').innerHTML = count + " tasks left";
     
 
         
