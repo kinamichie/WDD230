@@ -117,7 +117,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
     }
     
     document.getElementById('completedBtn').addEventListener('click', comTodos);
-    function comTodos(e) {
+    function comTodos() {
 
         var todoList = ls.getTodoList();
         var completedFilter = todoList.filter( element => element.completed === true);
@@ -125,7 +125,8 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         console.log(completedFilter);  
         document.querySelector('#todos').innerHTML= `${completedFilter}`;        
     }
-    /*var count = 0;
+    function count(){
+        var count = 0;
         for (var f in element.completed) {
         if (element.completed.hasOwnProperty(f)) {
          count++;
@@ -133,6 +134,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
             count--;
         }
         }
-        document.querySelector('#leftBtn').innerHTML = count + " tasks left";*/
+        document.querySelector('#leftBtn').innerHTML = count + " tasks left";
+    }
     
     
