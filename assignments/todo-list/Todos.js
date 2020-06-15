@@ -108,6 +108,9 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var count = todoList.filter(element => element.completed === false).length;
         document.querySelector('#leftBtn').innerHTML = count + " tasks left";
 
+        //hide the add button
+        document.querySelector('#addBtn').hidden=false;
+
         document.querySelector('#todos').innerHTML = '';
         loadTodos();        
     }
@@ -119,7 +122,10 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
 
         console.log(activeFilter); 
         
-        document.querySelector('#todos').innerHTML = activeFilter;          
+        document.querySelector('#todos').innerHTML = activeFilter;  
+
+        //hide the add button
+        document.querySelector('#addBtn').hidden=true;    
         
     }
     
