@@ -130,7 +130,10 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var completedFilter = todoList.filter( element => element.completed === true);       
     
         console.log(completedFilter);  
-        document.querySelector('#todos').innerHTML= `${completedFilter}`;        
+        document.querySelector('#todos').innerHTML= `${completedFilter}`; 
+        
+        //hide the add button
+        document.querySelector('#addBtn').hidden=true;
     }
 
    
