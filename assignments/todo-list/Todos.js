@@ -115,7 +115,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
 
         console.log(activeFilter); 
         var myArray = Object.values(todoList);
-        document.querySelector('#todos').innerHTML=myArray;          
+        document.getElementById('#todos').innerHTML=myArray;          
         
     }
     
