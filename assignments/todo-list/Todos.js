@@ -95,19 +95,15 @@ function completedTodo(e){
         }
     }
     });  
-   
+    var count = todoList.filter(element => element.completed === false).length;
+    document.querySelector('#leftBtn').innerHTML = count + " tasks left";
 }
     
 document.getElementById('allBtn').addEventListener("click", allTodos);
 
-    function allTodos() {
-        var todoList = ls.getTodoList();
-        var count = todoList.filter(element => element.completed === false).length;
-        document.querySelector('#leftBtn').innerHTML = count + " tasks left";
-        
+    function allTodos() {              
         document.querySelector('#todos').innerHTML = '';
-        loadTodos();
-        
+        loadTodos();        
     }
 
     document.getElementById('activeBtn').addEventListener('click', activeTodos);
