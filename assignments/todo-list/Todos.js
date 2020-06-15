@@ -89,12 +89,12 @@ function completedTodo(e){
         item.completed = !item.completed;
         if(item.completed){
             butn.innerText = "X";
-            count++; 
+            count--; 
             document.getElementById("content").style.textDecoration = "line-through";
 
         } else {
             butn.innerText="";
-            count--;
+            count++;
         }
     }
     });  
@@ -132,16 +132,6 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         console.log(completedFilter);  
         document.querySelector('#todos').innerHTML= `${completedFilter}`;        
     }
-    /*function count(){
-        var count = 0;
-        for (var f in element.completed) {
-        if (element.completed.hasOwnProperty(f)) {
-         count++;
-        }else {
-            count--;
-        }
-        }
-        document.querySelector('#leftBtn').innerHTML = count + " tasks left";
-    }*/
+   
     
     
