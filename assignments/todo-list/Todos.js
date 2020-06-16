@@ -48,7 +48,7 @@ function createTodoElement(todo){
     completeBtn.setAttribute('com-id', todo.id);
     completeBtn.onclick = completedTodo;
     if (todo.completed){
-        completeBtn.innerHTML="X";
+        completeBtn.innerHTML="X";        
     }
 
     //todo content
@@ -56,6 +56,9 @@ function createTodoElement(todo){
     todoContent.innerText = todo.content;
     todoContent.classList.add('todo-content');
     todoContent.setAttribute('id', 'content');
+    if(todo.completed){
+        todoContent.style.textDecoration="line-through";
+    }
 
     //delete button
     const deleteBtn = document.createElement('button');
@@ -96,16 +99,12 @@ function completedTodo(e){
     });  
     ls.completedTodo(todoList);
     document.querySelector('#todos').innerHTML = '';
-    loadTodos();
-  
+    loadTodos();  
 }
-    
-    
+        
 document.getElementById('allBtn').addEventListener("click", allTodos);
 
-    function allTodos() {  
-       
-
+    function allTodos() {       
         //hide the add button
         document.querySelector('#addBtn').hidden=false;
         document.querySelector('#todoInput').hidden=false;
@@ -124,9 +123,7 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         activeFilter.forEach(todo => {
         const el = createTodoElement(todo)
         addToList(el);
-    })
-         
-
+    })        
         //hide the add button
         document.querySelector('#addBtn').hidden=true;   
         document.querySelector('#todoInput').hidden=true;
