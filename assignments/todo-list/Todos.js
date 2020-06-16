@@ -14,7 +14,9 @@ function loadTodos(){
         const el = createTodoElement(todo)
         addToList(el);
     })
-    
+       
+    var count = todoList.filter(element => element.completed === false).length;
+    document.querySelector('#leftBtn').innerHTML = count + " tasks left";
 }
 
 //default export for the module
@@ -45,6 +47,9 @@ function createTodoElement(todo){
     completeBtn.setAttribute('type', 'checkbox');
     completeBtn.setAttribute('com-id', todo.id);
     completeBtn.onclick = completedTodo;
+    if (todo.completed){
+        completeBtn.innerHTML="X";
+    }
 
     //todo content
     const todoContent = document.createElement('div')
@@ -86,17 +91,12 @@ function completedTodo(e){
 
     todoList.forEach(item => {
         if(item.id == butn.getAttribute('com-id')){
-        item.completed = !item.completed;
-        if(item.completed){
-            butn.innerText = "X";
-           
-
-        } else {
-            butn.innerText="";
+            item.completed = !item.completed;        
         }
-    }
     });  
-    
+    ls.completedTodo(todoList);
+    document.querySelector('#todos').innerHTML = '';
+    loadTodos();
   
 }
     
@@ -104,9 +104,7 @@ function completedTodo(e){
 document.getElementById('allBtn').addEventListener("click", allTodos);
 
     function allTodos() {  
-        var todoList = ls.getTodoList();
-        var count = todoList.filter(element => element.completed === false).length;
-        document.querySelector('#leftBtn').innerHTML = count + " tasks left";
+       
 
         //hide the add button
         document.querySelector('#addBtn').hidden=false;
@@ -122,8 +120,12 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var activeFilter = todoList.filter( element => element.completed === false);       
 
         console.log(activeFilter); 
-        
-        document.querySelector('#todos').innerHTML = activeFilter;  
+        document.querySelector('#todos').innerHTML = '';
+        activeFilter.forEach(todo => {
+        const el = createTodoElement(todo)
+        addToList(el);
+    })
+         
 
         //hide the add button
         document.querySelector('#addBtn').hidden=true;   
@@ -137,7 +139,8 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var todoList = ls.getTodoList();
         var completedFilter = todoList.filter( element => element.completed === true);       
     
-        console.log(completedFilter);  
+        console.log(completedFilter); 
+
         document.querySelector('#todos').innerHTML= `${completedFilter}`; 
         
         //hide the input bar and the add button

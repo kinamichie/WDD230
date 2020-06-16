@@ -10,12 +10,10 @@ function deleteTodo(id){
     localStorage.setItem('toDoList',JSON.stringify(updatedTodos));
 }
 //completed todo
-function completedTodo(id){
-    const toDoList = getTodoList();
+function completedTodo(todos){    
     
-    localStorage.removeItem("toDoList");
-    const updatedTodos=toDoList.filter(todo =>todo.id ===id);
-    localStorage.setItem('toDoList', JSON.stringify(updatedTodos));
+    
+    localStorage.setItem('toDoList', JSON.stringify(todos));
 }
 
 //get todoList

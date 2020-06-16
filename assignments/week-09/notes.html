@@ -1,0 +1,45 @@
+<!--This web page is the notes I have taken from the reading in week 9. It comes from Chapter 9, 14 in Eloquent Javascript -->
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Notes for week 9</title>
+        <meta name="description" content="Notes for week nine by Kina Michie WDD 330">
+    </head>
+    <body>
+    <header>
+        <h1>Notes For Week 9</h1>
+    </header>
+    <body>
+        <ul><h2>Chapter 9</h2>
+            <li>A regular expression is a type of object and can be contruced with the RegExp() or forward slash (/) characters. /abc?;</li>
+            <li>Expression can be tested for matches
+                console.log(/abc/.test("abcde"));
+                //->true
+                console.log(/avc/.test("abxde"));
+                //->false
+            </li>
+            <li>A hyphen between two characters can be used to indicate a range of characters, where the ordering is determined by the character's Unicode number</li>
+            <li>Built-in shortcut </li>
+            <ul>
+                <li>\d  Any digit character</li>
+                <li>\w  An alphanumeric character ("word character")</li>
+                <li>\s  any whitespace character)space, tab, newline, and similar</li>
+                <li>\D  A character that is not a digit</li>
+                <li>\W  a nonalphanumeric character</li>
+                <li>\S  A nonwhitespace character</li>
+                <li>.  Any character except for newline</li>
+            </ul>
+            <li>A plus sign after something in a regular expression indicates that the element may be repeated more than once</li>
+            <li>A * sign has a similar meaning but also allows the pattern to match zero times</li>
+            <li>A question mark makes a part of a pattern otional, meaning it may occur zero times or one time</li>
+            <li>T indicate that a pattern should occur a precise number of times, used braces {} after an element</li>
+            <li>You can group sub-expressions but parenthesis must be used inbewteen</li>
+            <li>The exec method will return null if no match was found and return an object with information about the match otherwise</li>
+            <li>new Date() can be used to create and object for a specific time or date</li>
+            <li></li>
+        </ul>
+        
+        </body>
+        </html>
