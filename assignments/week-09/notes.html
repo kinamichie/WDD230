@@ -13,7 +13,7 @@
     </header>
     <body>
         <ul><h2>Chapter 9</h2>
-            <li>A regular expression is a type of object and can be contruced with the RegExp() or forward slash (/) characters. /abc?;</li>
+            <li>A regular expression is a type of object and can be contructed with the RegExp() or forward slash (/) characters. /abc?;</li>
             <li>Expression can be tested for matches
                 console.log(/abc/.test("abcde"));
                 //->true
@@ -38,8 +38,35 @@
             <li>You can group sub-expressions but parenthesis must be used inbewteen</li>
             <li>The exec method will return null if no match was found and return an object with information about the match otherwise</li>
             <li>new Date() can be used to create and object for a specific time or date</li>
-            <li></li>
+            <li>Backtracking is where a a matcher goes back and tries another branch if the current one does not work out</li>
+            <li>The replace method can be used to replace part of the string with another string</li>
+            <li>The search method expects a regular expression</li>
+            <li>The lastIndex property can control where the next match will start</li>
+            <li>To scan through all occurrences of a pattern in a string use both lastIndex and exec</li>
+            <li>INI file format</li>
+            <ul>
+                <li>Blank lines and lines starting with semicolons are ignored</li>
+                <li>Lines wrapped in [ and ] start a new section</li>
+                <li>Lines containg an alphanumeric identifier followed by an = character add a setting to the current section</li>
+                <li>Anything else is invalid</li>
+            </ul>
         </ul>
+        <ul><h2>Chapter 14</h2>
+            <li>Document structure is how the page is layed out</li>
+            <li>Document trees are another way to visualize how a page is layed out</li>
+            <li>Because childNodes are not a real array, we cannto loop over it with for/of and have to run over the index range using a regular for loop or use Array.from</li>
+            <li>Almost everything about the DOM structure can be changed</li>
+            <li>Use replaceChild method to replace a child node with another one</li>
+            <li>Some elements take up a whole line and are called block elements</li>
+            <li>Other such as links or the strong element are rendered on the samle line with their surrounding text and are called inline elements</li>
+            <li>JavaScript code can directly manipulate the style of an element through the element's style property</li>
+            <li>CSS = cascading style sheet</li>
+            <li>querySelectorAll takes a selector string and returns a NodeList containg all the elements that it matches. It is not live</li>
+            <li>querySelector method workds in a similar way and is useful if you want a specific, single element</li>
+            <li>The position style propterty makes it possible to move item around the page</li>
+            <li>The animation function is passed the current time as an argument</li>
+        </ul>
+
         
         </body>
         </html>
