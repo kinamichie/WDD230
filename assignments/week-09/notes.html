@@ -1,4 +1,4 @@
-<!--This web page is the notes I have taken from the reading in week 9. It comes from Chapter 9, 14 in Eloquent Javascript -->
+<!--This web page is the notes I have taken from the reading in week 9. It comes from Chapter 9, 14 in Novice to Ninja -->
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
@@ -13,58 +13,95 @@
     </header>
     <body>
         <ul><h2>Chapter 9</h2>
-            <li>A regular expression is a type of object and can be contructed with the RegExp() or forward slash (/) characters. /abc?;</li>
-            <li>Expression can be tested for matches
-                console.log(/abc/.test("abcde"));
-                //->true
-                console.log(/avc/.test("abxde"));
-                //->false
-            </li>
-            <li>A hyphen between two characters can be used to indicate a range of characters, where the ordering is determined by the character's Unicode number</li>
-            <li>Built-in shortcut </li>
-            <ul>
-                <li>\d  Any digit character</li>
-                <li>\w  An alphanumeric character ("word character")</li>
-                <li>\s  any whitespace character)space, tab, newline, and similar</li>
-                <li>\D  A character that is not a digit</li>
-                <li>\W  a nonalphanumeric character</li>
-                <li>\S  A nonwhitespace character</li>
-                <li>.  Any character except for newline</li>
-            </ul>
-            <li>A plus sign after something in a regular expression indicates that the element may be repeated more than once</li>
-            <li>A * sign has a similar meaning but also allows the pattern to match zero times</li>
-            <li>A question mark makes a part of a pattern otional, meaning it may occur zero times or one time</li>
-            <li>T indicate that a pattern should occur a precise number of times, used braces {} after an element</li>
-            <li>You can group sub-expressions but parenthesis must be used inbewteen</li>
-            <li>The exec method will return null if no match was found and return an object with information about the match otherwise</li>
-            <li>new Date() can be used to create and object for a specific time or date</li>
-            <li>Backtracking is where a a matcher goes back and tries another branch if the current one does not work out</li>
-            <li>The replace method can be used to replace part of the string with another string</li>
-            <li>The search method expects a regular expression</li>
-            <li>The lastIndex property can control where the next match will start</li>
-            <li>To scan through all occurrences of a pattern in a string use both lastIndex and exec</li>
-            <li>INI file format</li>
-            <ul>
-                <li>Blank lines and lines starting with semicolons are ignored</li>
-                <li>Lines wrapped in [ and ] start a new section</li>
-                <li>Lines containg an alphanumeric identifier followed by an = character add a setting to the current section</li>
-                <li>Anything else is invalid</li>
-            </ul>
+            <li>BOM = Browser Object Model is a collection of properties and methods that contain information about the browser and computer screen</li>
+            <li>Global variables are actual properties of a global object</li>
+            <li>window.alert() method will pause the execution of the program and display a message in a dialog box</li>
+            <li>window.confirm() method will stop the execution of the program and display a confirmation dialog that shows the message provided as an argument, and giving the options of OK or Cancel</li>
+            <li>sindow.prompt() method will stop the execution of the program and mshow a message, have an input field and allow a user to enter text</li>
+            <li>The window object has a navigator property that returns a reference to the Navigator object which contains information about the browser being used</li>
+            <li>The window.location property is an object that contains information about the URL of the current page. The href property returns the full URL as a string</li>
+            <li>The protocol property returns a string describing the protocol used</li>
+            <li>The host property returns a string describing the domain of the current URL and port number</li>
+            <li>The hostname property reutrns a string describing the domain of the current URL</li>
+            <li>The port property returns a string describing the port number, although it will return an empty string if the port is not explicitly stated in the URL</li>
+            <li>The assign() method can be used to load another resource from a URL provided as a parameter</li>
+            <li>The replace() method is almost the same as the assign() method except the current page will not be stored in teh session history, so the user will be unable to navigate back to it using the back button</li>
+            <li>The toString() method returns a string containing the whole URL</li>
+            <li>The window.history can be used to access information about any previously visited pages in the current browser session</li>
+            <li>The window.history.length property shows how many pages have been visited before arriving at the current page</li>
+            <li>The window.history.go() method can be used to go to a specific page, where 0 is the current page</li>
+            <li>The window.open() method can open a new window and the close() method can close it</li>
+            <li>The window.moveTo() method can move the window using X and Y coordinates</li>
+            <li>The window.scree object contains information about the screen the browser is displayed on</li>
+            <li>The availHeight and availWidth can be used to find the height and width of the screen</li>
+            <li>The colorDepth property can be used to find the color bit depth of the user's monitor</li>
+            <li>Each window object contains a document object</li>
+            <li>The document.write() method is frowned upon using</li>
+            <li>Cookies take the form of a text file that contain a list of names/value pairs separated by semicolons</li>
+            <li>To create a cookie, you assign it to JavaScript's 'cookie jar' using the document.cookie property</li>
+            <li>You can change cookie values just by reassigning it to document.cookie using the same name but a different value</li>
+            <li>To see the current contents of the cookie jar, simply enter document.cookie:</li>
+            <li>const cookies = document.cookie.split("; "); 
+                for (crumb of cookies){ 
+                    const [key,value] = crumb.split("="); 
+                    console.log(`The value of ${key} is ${value}`); 
+                }
+                << The value of name is Batman 
+                The value of hero is true 
+                The value of city is Gotham</li>
+            <li>You can put an expiration date on a cookie by adding " expires=date"</li>
+            <li>By default cookies can only be read by pages inside the same directory and domain as the file was set</li>
+            <li>Adding the string '; secure' to the end of a cookie will ensure it's only transmitted over a secure HTTPS network</li>
+            <li>To delete a cookie just set it to expire at a time in the past</li>
+            <li>window.setTimeout() methoed accepts a callback to a function as its first parameter and a number of milliseconds as its second parameter</li>
+            <li>The window.setInterval() method will repeatedly invoke the callvack function after every given number of milliseconds</li>
+            <li>The setTimeout() method and the setInterval method can be used to animate elements on a web page</li>
+            <li>.requestAnimationFrame results in a much smoother performance</li>
+            <li>Animation is usually best to use in CSS</li>        
         </ul>
         <ul><h2>Chapter 14</h2>
-            <li>Document structure is how the page is layed out</li>
-            <li>Document trees are another way to visualize how a page is layed out</li>
-            <li>Because childNodes are not a real array, we cannto loop over it with for/of and have to run over the index range using a regular for loop or use Array.from</li>
-            <li>Almost everything about the DOM structure can be changed</li>
-            <li>Use replaceChild method to replace a child node with another one</li>
-            <li>Some elements take up a whole line and are called block elements</li>
-            <li>Other such as links or the strong element are rendered on the samle line with their surrounding text and are called inline elements</li>
-            <li>JavaScript code can directly manipulate the style of an element through the element's style property</li>
-            <li>CSS = cascading style sheet</li>
-            <li>querySelectorAll takes a selector string and returns a NodeList containg all the elements that it matches. It is not live</li>
-            <li>querySelector method workds in a similar way and is useful if you want a specific, single element</li>
-            <li>The position style propterty makes it possible to move item around the page</li>
-            <li>The animation function is passed the current time as an argument</li>
+            <li>The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser</li>
+            <li>localStorage can be used instead of cookies as a way of saving data</li>
+            <ul>
+                <li>key tells us the key of the item that changed</li>
+                <li>newValue tells us the new value to which it has been changed</li>
+                <li>oldValue tells us the previous value before it was changed</li>
+                <li>storageArea tells us if it is stored in local or session storage</li>
+                <li>addEventListener('storage', (event) => { 
+                    console.log(`The ${event.key} was updated from
+                    ${event.oldValue} to ${event.newValue} and saved in 
+                    ${event.storageArea}`) }, false);</li>
+            </ul>
+            <li>The Geolocation API is used to obtain the geographical position of the device but permission must be granted by the user</li>
+            <li>The position object passed to the youAreHere() function has a coord property with a latitude and longitude property which together give the coordinates of the device</li>
+            <ul>
+                <li>position.speed property returns the ground speed of the device in meters per second</li>
+                <li>position.altitued property returns an estimate of the device's altitude in meters above the WGS84 ellipsoid, which is a standard measurement for the center of the Earth</li>
+                <li>position.heading property returns the direction the device is moving in. This is measured as a bearing in degrees, clockwise from the North</li>
+                <li>position.timestamp property returns the time that the position information was recorded</li>
+            </ul>
+            <li>Web workers allow processes to be run in the background, adding support for concurrency in JavaScript</li>
+            <li>Websocket is a new protocol that allows two-way communication with a server- also known as push messaging</li>
+            <li>Notification API allows you to show messages using the system's notification. You must have user permission</li>
+            <li>Audio clips can be inserted into a page using the "audio" tag</li>
+            <li>A video clip can be inserted using the "video" tag</li>
+            <li>The play() method will start the clip playing from its current position</li>
+            <li>The pause() mothod will pause the clip at its current position</li>
+            <li>The volume property is a number that can be used to set the audio volume</li>
+            <li>The muted property is a boolean value that can be used to mute the audio</li>
+            <li>The currrentTime property is a number value that can be used to jump to another part of the clip</li>
+            <li>the playbackRate property is used to fast-forward or rewind the clip by changing its value</li>
+            <li>The loop property is a boolean value that can be set to true to make the clip repeat in a loop</li>
+            <li>The duration property can be used to see how long the clip lasts</li>
+            <li>Audio and video clips also ahave a number of events that will fre when they occur including:</li>
+            <ul>
+                <li>The play event, which fres when the clip starts and when it resumes after a pause</li>
+                <li>The pause event, which fres when the clip is paused</li>
+                <li>The volumechange event, which fres when the volume is changed</li>
+                <li>The loadedmetedata event, which we saw in the note above, and which fres when all the video's metadata has loaded</li>
+                <li>The canvas element allows graphis to be drawn onto a web page in real time using JavaScript</li>
+            </ul>
+            <li>A canvas  <a href="canvas.html">example</a></li>
         </ul>
 
         
