@@ -137,9 +137,11 @@ document.getElementById('allBtn').addEventListener("click", allTodos);
         var completedFilter = todoList.filter( element => element.completed === true);       
     
         console.log(completedFilter); 
-
-        document.querySelector('#todos').innerHTML= `${completedFilter}`; 
-        
+        document.querySelector('#todos').innerHTML = '';
+        completedFilter.forEach(todo => {
+        const el = createTodoElement(todo)
+        addToList(el);
+    })   
         //hide the input bar and the add button
         document.querySelector('#addBtn').hidden=true;
         document.querySelector('#todoInput').hidden=true;
