@@ -10,12 +10,26 @@
         <script type="module" src="main.js"></script>
     </head>
     <body>
+        <div class="app-wrap">
+            <header>
+                <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city...">
+            </header>
+            <main>
+                <section class="location">
+                    <div class="city"></div>
+                    <div class="state"></div>
+                </section>
+                <div class="current">
+                    <div class="temp"><span></span></div>
+                    <div class="weather"> </div>
+                    <div class="hi-low"></div>                
+                </div>
+            </main>
+        </div>
+        <div id="app"></div>
     <header>
-        <h1>Alaska Animals</h1>
+        <h1 id="pageTitle">Alaska Animals</h1>
     </header>
-    <body>
-
-
 
         <div class="container">
             <div id="question-container" class="hide">
@@ -29,9 +43,14 @@
             </div>
             <div id="quiz" class="hide"></div>
             <div class="controls">
-                <button id="startBtn" class="startBtn">Start</button>
+                
                 <button id="nextBtn" class="nextBtn hide">Next</button>
             </div>
+        </div>
+        <div>
+            <button id="backBtn" onclick="loadData()">&#8592;</button>
+            <button id="sightings" onclick="animalSightings()">Sightings</button>
+            <button id="startBtn" class="startBtn">Quiz</button>
         </div>
     </body>
 </html>
