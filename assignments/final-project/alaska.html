@@ -1,4 +1,4 @@
-<!--This web page is the app The Animals of Alaska -->
+
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="app-wrap">
-            <header>
+            <header><h1 class="weatherTitle">Weather</h1>
                 <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city...">
             </header>
             <main>
@@ -26,31 +26,25 @@
                 </div>
             </main>
         </div>
+        <header>
+        <h1 id="pageTitle">Land Mammals of Alaska</h1>
+        <h2 id="instructions">Click on the picture to see details about each animal</h2>
+        </header>
         <div id="app"></div>
-    <header>
-        <h1 id="pageTitle">Alaska Animals</h1>
-    </header>
-
-        <div class="container">
-            <div id="question-container" class="hide">
-                <div id="question">Question</div>
-                <div id="answerBtn" class="btnGrid">
-                    <button class="btn">Answer1</button>
-                    <button class="btn">Answer2</button> 
-                    <button class="btn">Answer3</button> 
-                    <button class="btn">Answer4</button>
-                </div>
-            </div>
-            <div id="quiz" class="hide"></div>
-            <div class="controls">
-                
-                <button id="nextBtn" class="nextBtn hide">Next</button>
-            </div>
+        
+        <div id="sightedInput">             
+            <input id="sightedName" type="text" placeholder="Name of Animal" required>
+            <input id="sightedWhere" type="text" placeholder="Where you saw it" required>
+            <input id="sightedWhen" type="text" placeholder="When you saw it" required>            
+            <button id="addBtn" onclick="newSightings()">Add</button>
         </div>
+        <div id="comments"></div>
+      
         <div>
-            <button id="backBtn" onclick="loadData()">&#8592;</button>
-            <button id="sightings" onclick="animalSightings()">Sightings</button>
-            <button id="startBtn" class="startBtn">Quiz</button>
+            <button id="backBtn" >Back</button>
+            <button id="newBack" >Back</button>
+            <button id="sightings">Sightings</button>
+            
         </div>
     </body>
 </html>

@@ -74,7 +74,7 @@ function clearStatusClass(element){
 }
 const questions = [
     {
-        question: 'What is the larget land mammal in Alaska?',
+        question: 'What is the largest land mammal in Alaska?',
         answers: [
             { text: 'Grizzley Bear', correct: false },
             { text: 'Grizzley Bear', correct: false },

@@ -1,39 +1,47 @@
-import quiz from './quiz.js';
+//import quiz from './quiz.js';
 import utilities from './utilities.js';
 import {animalData} from './animalData.js';
+import sightings from './sightings.js';
 
 window.addEventListener('load', loadData);
 
-function loadData() {
-    const app = document.getElementById('app');
-    app.innerHTML='';
-    document.querySelector('#pageTitle').innerText = "Animals of Alaska";
-    animalData.forEach((animal, i) => {
-        const animalNode = createAnimalNode(animal, i);
-        animalNode.addEventListener('click', viewAnimal);
+document.querySelector('#backBtn').addEventListener('click', loadData);
 
-        document.querySelector('#backBtn').hidden = true;
+
+function loadData() {
+    
+    const app = document.getElementById('app');   
+    app.innerHTML='';
+    animalData.forEach((animal, i) => {
+        const animalNode = createAnimalList(animal, i);
+        animalNode.addEventListener('click', viewAnimal);     
 
         app.appendChild(animalNode);
-    })  
+    });  
     
+        document.querySelector('#backBtn').hidden = true;
+        document.querySelector('#comments').hidden = true;
+        document.querySelector('#sightings').hidden = false;
+        document.querySelector('#newBack').hidden = true; 
+        document.querySelector('#instructions').hidden=false;
+   
 }
-function createAnimalNode(animal, i, showDetail = false){
+function createAnimalList(animal, i, showDetails = false){
     const div = document.createElement('div');
-    const h1 = document.getElementById('#pageTitle');
     const img = document.createElement('img');
 
     div.classList.add('animal');
     div.id = i;
     img.src=animal.img;
 
-if(showDetail) {
-    h1.innerText=animal.name;
+if(showDetails) {
+    const animalTitle = document.createElement('h2');
+    animalTitle.innerHTML = `${animal.name}`;
     const description = document.createElement('div');
-    description.innerHTML = `<h2>Description<h2>
-    ${animal.description}`;
-
+    description.innerHTML = `<h2>Description<h2>${animal.description}`;
+    
     div.appendChild(img);
+    div.appendChild(animalTitle);
     div.appendChild(description);
    
 }else {
@@ -49,8 +57,38 @@ function viewAnimal(event) {
     const app = document.getElementById('app');
     app.innerHTML='';
     const id = event.currentTarget.id;
+    const animalDetails = createAnimalList(animalData[id], id, true);
 
-    const animalDetails = createAnimalNode(animalData[id], id, true);
     app.appendChild(animalDetails);
+
+    
     document.querySelector('#backBtn').hidden = false;
-}
+    document.querySelector('#sightings').hidden = true;
+    document.querySelector('#comments').hidden = true;
+    document.querySelector('#newBack').hidden = true; 
+ }
+
+
+document.getElementById('sightings').addEventListener('click', () => {
+    document.querySelector('#comments').innerHTML = '';
+    document.querySelector('#app').hidden = true;
+    document.querySelector('#backBtn').hidden = true;
+    document.querySelector('#comments').hidden = false;
+    document.querySelector('#sightings').hidden = true; 
+    document.querySelector('#newBack').hidden = false;    
+    
+    sightings.loadSightings(); 
+   
+});
+document.getElementById('newBack').addEventListener('click', () => {
+    document.querySelector('#comments').innerHTML = '';
+    document.querySelector('#app').hidden = false;
+    document.querySelector('#backBtn').hidden = true;
+    document.querySelector('#comments').hidden = true;
+    document.querySelector('#sightings').hidden = true;    
+    
+    loadData(); 
+   
+});
+
+
