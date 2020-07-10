@@ -6,59 +6,98 @@
         <title>Tic-Tac-Toe</title>
         <meta name="description" content="Tic-Tac-Toe game">
         <style>
+            h2 {
+                text-align: center;
+            }
+            td {
+                border: 2px solid #000;
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 70px;
+                cursor: pointer;
+            }
             .board {
-                width: 40%;
-                margin: auto;
-            }
-            .row {
-                display: flex;
-                flex-direction: row;
-            }
-            .cell {
-               /*  border: 1px solid black; */
-                width: 50px;
-                height: 50px;
-            }
+                border-collapse: collapse;
+                position: absolute;
+                left: 32%;                
+            }   
 
-             .cell:nth-child(1) {
-                border-right: 1px solid black;
+            table tr:first-child td {
+                border-top: 0;
+            } table tr:last-child td {
+                border-bottom: 0;
             } 
+            table tr td:first-child {
+                border-left: 0;
+            } 
+            table tr td:last-child {
+                border-right: 0;
+            } 
+            #reset {
+                margin-top: 70%;
+                position: absolute;
+                margin-left: 46%;
+                background-color: blue;
+                color: white;
+            }
             
-            .cell:nth-child(2) {
-                border-right: 1px solid black;
-            } 
-
-            .one, .two {
-                border-bottom: 1px solid black;
-            }
+            
             
         </style>
 
     </head>
     <body>
-        <div class="board">
-            <div class="row one">
-                <div class="cell" id="0" ontouchend="markCell(this.id)"></div>
-                <div class="cell" id="1" ontouchend="markCell(this.id)"></div>
-                <div class="cell" id="2" ontouchend="markCell(this.id)"></div>
-            </div>
-            <div class="row two">
-                <div class="cell" id="3" ontouchend="markCell(this.id)"></div>
-                <div class="cell" id="4" ontouchend="markCell(this.id)"></div>
-                <div class="cell" id="5" ontouchend="markCell(this.id)"></div>
-            </div>
-            <div class="row">
-                <div class="cell" id="6" ontouchend="markCell(this.id)"></div>
-                <div class="cell" id="7" ontouchend="markCell(this.id)"></div>
-                <div class="cell" id="8" ontouchend="markCell(this.id)"></div>
-            </div>
-        </div>
+        <h2>Tic Tack Toe</h2>
+        <table class="board">
+            <tr class="rowOne">
+                <td class="cell" id="0" ontouchend="markCell(this.id)"></td>
+                <td class="cell" id="1" ontouchend="markCell(this.id)"></td>
+                <td class="cell" id="2" ontouchend="markCell(this.id)"></td>
+            </tr>
+            <tr class="rowTwo">
+                <td class="cell" id="3" ontouchend="markCell(this.id)"></td>
+                <td class="cell" id="4" ontouchend="markCell(this.id)"></td>
+                <td class="cell" id="5" ontouchend="markCell(this.id)"></td>
+            </tr>
+            <tr class="rowThree">
+                <td class="cell" id="6" ontouchend="markCell(this.id)"></td>
+                <td class="cell" id="7" ontouchend="markCell(this.id)"></td>
+                <td class="cell" id="8" ontouchend="markCell(this.id)"></td>
+            </tr>
+        </table>
         
         <button id="reset" onclick="clearBoard()"> Reset </button>
 
    
         <script>
-            var currentPlayer = 1;
+            //var firstBoard;
+            const currentPlayer = 'O';
+            const secondPlayer = 'X';
+            const winningCom = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [6, 4, 2]
+            ]
+            const cells = document.querySelectorAll('cell');
+            markCell();
+
+            function markCell() {
+                
+                if(currentPlayer === 1) {
+                    document.getElementById(id).innerText = "X";
+                    currentPlayer = 2;
+                } else if (currentPlayer === 2) {
+                    document.getElementById(id).innerText = "O";
+                    currentPlayer = 1;
+                }
+            }  
              
             function clearBoard() {
                 let cells = document.getElementsByClassName('cell');
@@ -69,19 +108,7 @@
                     } 
             }
             
-            function markCell(id) {
-                console.log(id)
-
-                if(currentPlayer === 1) {
-                    document.getElementById(id).innerText = "X";
-                    currentPlayer = 2;
-                } else if (currentPlayer === 2) {
-                    document.getElementById(id).innerText = "O";
-                    currentPlayer = 1;
-                }
-            }
-
-            
+                    
 
 
         </script> 
