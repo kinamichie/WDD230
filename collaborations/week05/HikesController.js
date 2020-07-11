@@ -1,6 +1,6 @@
 import HikeModel from './HikeModel.js';
 import HikesView from './HikesView.js';
-​
+
 export default class HikesController {
     constructor(parentId){
         this.parentElement = document.getElementById(parentId);
@@ -21,7 +21,6 @@ export default class HikesController {
         
     }
 }
-​
 /*
 import Hikes from './HikeModel.js';
 const myHike = new Hikes('hikeListId');

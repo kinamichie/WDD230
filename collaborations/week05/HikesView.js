@@ -1,12 +1,11 @@
 const imgBasePath = '//byui-cit.github.io/cit261/examples/';
-​
+
 export default class HikesView {
     constructor(listElementId){
         //gonna do more
         //this.imgBasePath = '//byui-cit.github.io/cit261/examples/';
     }
-​
-​
+    
     /* name: "Bechler Falls",
       imgSrc: "falls.jpg",
       imgAlt: "Image of Bechler Falls",
@@ -16,9 +15,9 @@ export default class HikesView {
         let element = document.getElementById(listElement);
         
         let currentInnerHTML = element.innerHTML;
-​
+        
         hikeList.forEach(buildHikeHTML);
-​
+        
         function buildHikeHTML(hike, index){
             currentInnerHTML = element.innerHTML;
             let displayedHike = `<div class="hike">
@@ -31,10 +30,8 @@ export default class HikesView {
             </div>`;
             currentInnerHTML += displayedHike;
             element.innerHTML = currentInnerHTML;
-        }
-        
-        
-        
+        }      
+                
     }
     renderOneHikeLight(hike){
             console.log("View: " + hike);
@@ -50,8 +47,8 @@ export default class HikesView {
                 document.getElementById('hikes').innerHTML = displayedHike;
                 
             }
-​
-    renderOneHikeFull(hike, parentElement) {
+            
+        renderOneHikeFull(hike, parentElement) {
         // this method will be used to one hike with full detail...you will need this for the stretch goal! 
         
         var node = document.createTextNode(parentElement);
