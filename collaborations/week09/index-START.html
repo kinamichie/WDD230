@@ -63,7 +63,7 @@
 keys.forEach(key => key.addEventListener('click', playSound)); */
 document.addEventListener('keydown', playSound);
   var count = 0;
-  var pixel = 10;
+  var pixel = 0;
 
 
 function playSound(e){
@@ -78,7 +78,7 @@ function playSound(e){
       pixel += 10;
       if (count == 10){
         div.style.transform =`translateY(${pixel}px)`;
-        pixel = 10;
+        pixel = 0;
         count = 0;
       }
     }
@@ -97,7 +97,6 @@ function playSound(e){
   const audio = document.querySelector('data-key');
   console.log(audio);
 }
-
 
 </script>
 

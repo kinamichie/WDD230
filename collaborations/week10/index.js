@@ -10,3 +10,5 @@ myQuakesController.init();
 //document.getElementById("locationButton").addEventListener('click', function () {
   
 //}, false);
+
+

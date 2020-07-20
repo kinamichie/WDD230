@@ -8,28 +8,68 @@
         <style>
             h1 {
                 color: red;
+                text-align: center;
+            }
+            h2 {
+                text-align: center;
             }
             #pokemon {
                 display: flex;
                 flex-direction: column;
                 justify-content: auto;
                 align-content: auto;
+                
             }
             ul {
                 display: flex;
                 list-style-type: none;
                 flex-direction: column;
-                justify-content: space-between;
-            
+                justify-content: space-between;                         
                 
             }
             ul li {
                 font-family: Arial, Helvetica, sans-serif;
+                justify-content: center; 
+                cursor: pointer;
+                width: 20%;
+                padding: 10px 10px 10px 10px;
+                background: #FAF3DD;
+                font-size: 16px;
+                transition: 0.2s; 
+                margin-left: 37%;
+                margin-bottom: 3%;
+            }
+            #request {
+                background-color: seagreen;
+                width: 30%;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 35% ;
+                
+            }
+            .view-btn {
+                background-color: red;
+                justify-content: center;
+                padding: 5px;
+                float: right;
+            }
+            span {
+                padding: 20px;
             }
 ​
-            button {
-                margin-top: 10px;
-                width: 100px;
+            #previous {
+                margin-top: 20px;
+                width: 100px;             
+
+            } 
+           
+            #buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
             }
         </style>
     </head>
@@ -41,11 +81,12 @@
             <ul id="pokemonList">
             </ul>
 ​
-            <input type="text" id="selectedPokemon" placeholder="PokeMon Name">
-            <button id="request" onclick="getPokemon('https://pokeapi.co/api/v2/pokemon')">Click for request</button>
+            
+            <button id="request" onclick="getPokemon('https://pokeapi.co/api/v2/pokemon')">Click to see the list of Pokemon</button>
+            
     <div id="buttons">
-        <button id="previous" onclick="">Previous</button>
-        <button id="next" onclick="">Next</button>
+        <button id="previous" >Previous</button>
+        <button id="next" >Next</button>
     </div>
         </div>
         
