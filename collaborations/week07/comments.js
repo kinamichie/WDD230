@@ -29,10 +29,8 @@
   }
 
     //save comments in local storage
-  function saveComments(key, comments){
-    const newComment = getAllComments();
-    newComment.push(comments);
-      window.localStorage.setItem(key, JSON.stringify(newComment));
+  function saveComments(key, comment){
+         window.localStorage.setItem(key, JSON.stringify(comment));
     }
    
     //get comments from local storage
@@ -49,7 +47,7 @@
       <ul class="comments"></ul>`;
       //create element
     function createCommentElement(element, comments) {
-      element.innerHtml='';
+      element.innerHtml= '';
       comments.forEach(el => {
         let item = document.createElement('li');
         item.innerHTML=`
@@ -64,16 +62,16 @@
       this.commentElementId = commentElementId;
       this.model = new CommentsModel(this.type);
     } 
-    addSubmitListener(commentName) {
-      document.getElementById('commentAddBtn').ontouchend = () => {
+    addSubmitListener(commentName){
+      document.getElementById('commentAddBtn').onclick = () => {
         this.model.createComments(
           commentName,
-          document.getElementById('#hikeComment').value
+          document.getElementById('hikeComment').value
         );
-        document.getElementById('#hikeComment').value='';
+        document.getElementById('hikeComment').value='';
         this.showCommentList(commentName);
-      }; 
-    } 
+      }    
+    }
       
     showCommentList(q = null) {
       try{

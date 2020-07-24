@@ -45,7 +45,7 @@ export default class HikeModel {
   
   getAllHikes() {
         // should return a list of all the hikes.
-  return hikeList;
+      return hikeList;
   }
   
   getHikeByName(hikeName){
