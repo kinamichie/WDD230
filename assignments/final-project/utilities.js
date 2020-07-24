@@ -1,11 +1,11 @@
-const searchbox = document.querySelector('.search-box');
-searchbox.addEventListener('keypress', setQuery);
+const searchBox = document.querySelector('.search-box');
+searchBox.addEventListener('keypress', setQuery);
 
 function setQuery(evt){
     if(evt.keyCode == 13)
  {
-     getResults(searchbox.value);
-     console.log(searchbox.value);
+     getResults(searchBox.value);
+     console.log(searchBox.value);
  }}
 
  function getResults (query){

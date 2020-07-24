@@ -68,7 +68,7 @@ function createSightingsElement(sightings) {
 
     //when the animal was sighted
     const whenSighted = document.createElement('div');
-    whenSighted.innerText=sightings.when + '\n';
+    whenSighted.innerText=sightings.when + '\n \n';
     whenSighted.classList.add('whenSighted');
     whenSighted.setAttribute('id', 'whenSighted');
 

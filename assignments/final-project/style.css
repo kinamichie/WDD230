@@ -35,6 +35,18 @@ h1, h2 {
   align-items: center;
   justify-content: center;
 }
+/*style the app*/
+#app {
+  columns: 2;
+  padding: 2em;
+}
+img {
+ width: 80%;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+
+}
 /* Style the "Add" button */
 #addBtn {
   padding: 10px;
@@ -64,7 +76,7 @@ h1, h2 {
 }
 #comments {
   width: 100%;
-  padding-left: 3%;
+  padding: 2%;
   float: left;
   font-size: 18px;
   background-color: #8FC0A9;
@@ -80,6 +92,7 @@ h1, h2 {
   transition: 0.3s;
   border-radius: 0;
   margin-left: 3%;
+  margin-bottom: 20px;
 }
 #backBtn:hover {
   background-color: #4A7C59;
@@ -102,8 +115,4 @@ h1, h2 {
 }
 #sightings:hover {
   background-color: #4A7C59;
-
-}
-img {
-  margin-left: 28%;
 }
